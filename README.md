@@ -7,7 +7,7 @@ A lightweight C++ library designed to parse [JSON files](https://www.json.org/js
 
 #### TODO:
 - [x] Documentation
-- [ ] License
+- [x] License
 - [ ] Rest of code
 - [ ] Tests
 
@@ -64,3 +64,6 @@ The documentation have been written in a doxygen-compatible format and can be vi
 doxygen Doxyfile
 ```
 > Note: this requires that `doxygen` is installed.
+
+## License
+This project is licensed under the BSD 2-Clause License - see the LICENSE file for details.
