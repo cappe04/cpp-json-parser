@@ -24,18 +24,17 @@ This class manages the parsed JSON in memory and is sole owner of it. The parsed
 
 - `json::View`      (_struct_)
 
-A `View` is the only way to interact with the parsed JSON data and does not take any ownership of the memory, this means that a `View` cannot be used without the document being alive.
+A `View` is the only way to interact with the parsed JSON data and does not take any ownership of the memory, this means that a `View` cannot be used without the `Document` instance being alive.
 
-The `View` struct allows you to cast data to a specific type and provides access to JSON object fields or array items.
+The `View` struct allows you to cast data to a specific types and provides access to JSON object fields or array items.
 
 ## Examples
 Let this be the input file:
 ```json
 {
     "foo": {
-        "bar": [1, 2, 3, ...]
-    },
-    ...
+        "bar": [1, 2, 3]
+    }
 }
 ```
 
