@@ -85,21 +85,20 @@ Usage</h1>
 </ul>
 <p>This class is for parsing the JSON file and provieds a log of errors for incorrectly formatted JSON files. The parser will generate a <code>Document</code> instance when done.</p>
 <ul>
-<li><code>Document</code> (<em>class</em>)</li>
+<li><code><a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">json::Document</a></code> (<em>class</em>)</li>
 </ul>
 <p>This class manages the parsed JSON in memory and is sole owner of it. The parsed data can be accessed through <code>View</code> instances.</p>
 <ul>
-<li><code>View</code> (<em>struct</em>)</li>
+<li><code><a class="el" href="structjson_1_1View.html" title="A view into a Document.">json::View</a></code> (<em>struct</em>)</li>
 </ul>
-<p>A <code>View</code> is the only way to interact with the parsed JSON data and does not take any ownership of the memory, this means that a <code>View</code> cannot be used without the document being alive.</p>
-<p>The <code>View</code> struct allows you to cast data to a specific type and provides access to JSON object fields or array items.</p>
+<p>A <code>View</code> is the only way to interact with the parsed JSON data and does not take any ownership of the memory, this means that a <code>View</code> cannot be used without the <code>Document</code> instance being alive.</p>
+<p>The <code>View</code> struct allows you to cast data to a specific types and provides access to JSON object fields or array items.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Examples</h1>
 <p>Let this be the input file: </p><div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;foo&quot;: {</div>
-<div class="line">        &quot;bar&quot;: [1, 2, 3, ...]</div>
-<div class="line">    },</div>
-<div class="line">    ...</div>
+<div class="line">        &quot;bar&quot;: [1, 2, 3]</div>
+<div class="line">    }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Then you would be able to read values form the array like this:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="json_8hpp.html">json_parser/json.hpp</a>&quot;</span> <span class="comment">// include header</span></div>
