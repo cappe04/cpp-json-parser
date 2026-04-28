@@ -44,7 +44,7 @@ namespace json {
     public:
         
         /**
-         * @brief Access children to object type
+         * @brief Access fields of JSON object
          * @warning throws if key isn't in the object. To avoid this
          * use View::try_get()
          * @returns a View to the value paired with `key`.
@@ -52,7 +52,7 @@ namespace json {
          const View operator[](std::string_view key) const;
          
          /**
-         * @brief Access children to array type
+         * @brief Access items of JSON array
          * @warning throws if index is out of range for the array type. To 
          * avoid this use View::try_at()
          * @returns a View to the value at `index`.
