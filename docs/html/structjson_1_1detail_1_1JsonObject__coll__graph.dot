@@ -1,0 +1,15 @@
+digraph "json::detail::JsonObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="json::detail::JsonObject",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" child" ,fontname="Helvetica"];
+  Node2 [label="json::detail::JsonNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structjson_1_1detail_1_1JsonNode.html",tooltip="Nodes for tree structure."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" literal" ,fontname="Helvetica"];
+  Node3 [label="json::detail::JsonLiteral",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structjson_1_1detail_1_1JsonLiteral.html",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" object" ,fontname="Helvetica"];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" array" ,fontname="Helvetica"];
+  Node4 [label="json::detail::JsonArray",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structjson_1_1detail_1_1JsonArray.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" child" ,fontname="Helvetica"];
+}

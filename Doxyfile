@@ -1,0 +1,22 @@
+PROJECT_NAME           = "Json Parser"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = include/json_parser
+INPUT                  += README.md
+RECURSIVE              = YES
+
+USE_MDFILE_AS_MAINPAGE = README.md
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_MARKDOWN      = NO
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = NO
+
+FILE_PATTERNS          = *.h *.hpp *.cpp *.md
+
+AUTOLINK_SUPPORT       = YES
+HAVE_DOT               = YES   # if graphviz installed
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES

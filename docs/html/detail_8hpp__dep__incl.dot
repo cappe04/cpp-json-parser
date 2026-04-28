@@ -1,0 +1,9 @@
+digraph "include/json_parser/detail/detail.hpp"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="include/json_parser\l/detail/detail.hpp",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Private library functionality."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="include/json_parser\l/json.hpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json_8hpp.html",tooltip="All library functionality."];
+}
