@@ -20,7 +20,7 @@ namespace json::detail {
      * @enum JsonValue
      * @brief Enum for json values: https://www.json.org/json-en.html
      */
-    enum class JsonValue { String, Number, Object, Array, True, False, Null };
+    enum class JsonValue { Object, Array, String, Number, True, False, Null };
 
     /**
      * @struct JsonNode

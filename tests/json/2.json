@@ -1,0 +1,15 @@
+{
+    "array": [1, 2, 3, 4, 5],
+    "null": null,
+    "int": 67,
+    "float": 67e2,
+    "string": "Hello, World!",
+    "object": {
+        "67": true,
+        "68": false,
+        "69": true
+    },
+    "name": "Casper Bené",
+    "🤯": "🤯",
+    "feet": "🦶🦶"
+}

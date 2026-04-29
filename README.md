@@ -8,8 +8,10 @@ A lightweight C++ library designed to parse [JSON files](https://www.json.org/js
 #### TODO:
 - [x] Documentation
 - [x] License
-- [ ] Rest of code
+- [x] Rest of code
+- [ ] Cool build system with CMake
 - [ ] Tests
+- [ ] Faster key lookup (Bin-search or MPHF?)
 
 ## Usage
 The libraries main functianality is split into 3 diffrent classes / structs, all under the namespace `json` and all in the header `json_parser/json.hpp`.

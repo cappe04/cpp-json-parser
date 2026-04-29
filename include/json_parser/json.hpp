@@ -49,7 +49,7 @@ namespace json {
          * use View::try_get()
          * @returns a View to the value paired with `key`.
          */
-         const View operator[](std::string_view key) const;
+        const View operator[](std::string_view key) const;
          
          /**
          * @brief Access items of JSON array
@@ -156,6 +156,8 @@ namespace json {
         View(const detail::JsonNode* const node);
 
         const detail::JsonNode* const node;
+
+        friend class Document;
     };
 
 
@@ -212,10 +214,10 @@ namespace json {
          * a std::unique_ptr to the parsed JSON. 
          * To initilze a new document, use Parser::get_document().
          */
-        Document(std::unique_ptr<const detail::JsonNode> root,
+        Document(std::unique_ptr<detail::JsonNode> root,
                  std::shared_ptr<const std::string> source);
 
-        std::unique_ptr<const detail::JsonNode> root;
+        std::unique_ptr<detail::JsonNode> root;
         std::shared_ptr<const std::string> source;
 
         friend class Parser;
@@ -319,7 +321,7 @@ namespace json {
     /**
      * @copydoc parse_string(const std::string&)
      */
-    Document parse_string(std::shared_ptr<const std::string> soruce);
+    Document parse_string(std::shared_ptr<const std::string> source);
     
     /**
      * @brief Wrapper around Parser

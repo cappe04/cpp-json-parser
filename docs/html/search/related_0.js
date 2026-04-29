@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parser_94',['Parser',['../classjson_1_1Document.html#ab80291af9c262f63b83fa9c16f12014d',1,'json::Document']]]
+  ['document_94',['Document',['../structjson_1_1View.html#a883538034e58fc5c0de7d4e4cab3cef7',1,'json::View']]]
 ];
