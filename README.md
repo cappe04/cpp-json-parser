@@ -47,13 +47,13 @@ Then you would be able to read values form the array like this:
 
 // ...
 
-Parser parser(/* Input: JSON file as a string */);
+json::Parser parser(/* Input: JSON file as a string */);
 parser.parse();
 if(!parser.get_status()) { // In case of incorrectly formated input
     std::cout << parser.get_error() << std::endl;
 } else {
-    Document doc = parser.get_document();
-    View view = doc.top_level();
+    json::Document doc = parser.get_document();
+    json::View view = doc.top_view();
     std::cout << view["foo"]["bar"][0].as<int>() << std::endl; // output: 1
 }
 

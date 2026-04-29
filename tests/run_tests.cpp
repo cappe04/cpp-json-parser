@@ -66,5 +66,20 @@ int main() {
         }
     }
 
+    {
+        std::cout << " === Code Example 1: ===" << std::endl;
+
+        const std::string code = open_file("tests/json/3.json");
+        json::Parser parser(code);
+        parser.parse();
+        if(!parser.get_status()) { // In case of incorrectly formated input
+            std::cout << parser.get_error() << std::endl;
+        } else {
+            json::Document doc = parser.get_document();
+            json::View view = doc.top_view();
+            std::cout << view["foo"]["bar"][0].as<int>() << std::endl; // output: 1
+        }
+    }
+
     return 0;
 }
