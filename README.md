@@ -1,4 +1,4 @@
-# C++ Json Parser
+# C++ Json Parser ![C++20](https://img.shields.io/badge/C%2B%2B-20-blue)
 
 A lightweight C++ library designed to parse [JSON files](https://www.json.org/json-en.html) into native data types.
 
@@ -6,9 +6,16 @@ A lightweight C++ library designed to parse [JSON files](https://www.json.org/js
 - [x] Documentation
 - [x] License
 - [x] Rest of code
-- [x] Cool build system with CMake (have not tried on diffrent platforms yet)
+- [x] Cool build system with CMake (only tried with g++ on Linux and MSVC on Windows)
 - [ ] Tests (_WIP_)
 - [ ] Faster key lookup (Bin-search or MPHF?)
+
+## Requirements
+
+| Tool     | Version        |
+|----------|----------------|
+| C++      | C++20          |
+| CMake    | 3.10 or newer  |
 
 ## Usage
 The libraries main functianality is split into 3 diffrent classes / structs, all under the namespace `json` and all in the header `json_parser/json.hpp`.
@@ -39,7 +46,7 @@ and then:
 cmake --build build
 ```
 
-Which results in a file `build/libjson_parser.a` or `build/json_parser.lib`.
+Which results in a file `libjson_parser.a` or `json_parser.lib`.
 
 ## Examples
 Let this be the input file:
@@ -93,3 +100,4 @@ cmake --build build
 ```
 ctest --test-dir build -V
 ```
+> Note: the last step to actually run the test might be a little bit diffrent depending on your compiler.

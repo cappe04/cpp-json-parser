@@ -9,6 +9,10 @@
 #include "detail/detail.hpp"
 
 #include <memory>
+#include <string>
+#include <sstream>
+#include <cstdint>
+#include <string_view>
 
 /**
  * @namespace json

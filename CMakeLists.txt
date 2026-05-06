@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.10)
 
 project(json_parser)
 
+
 add_library(json_parser STATIC
     src/json_parser/json.cpp
     src/json_parser/detail.cpp
@@ -14,6 +15,8 @@ target_include_directories(json_parser
         ${CMAKE_CURRENT_SOURCE_DIR}/include/detail
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
+
+target_compile_features(json_parser PUBLIC cxx_std_20)
 
 enable_testing()
 
