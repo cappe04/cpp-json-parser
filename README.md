@@ -1,5 +1,4 @@
-# C++ Json Parser ![Version](https://img.shields.io/badge/version-1.0.0-blue) 
-![C++20](https://img.shields.io/badge/C%2B%2B-20-blue)
+# C++ Json Parser ![Version](https://img.shields.io/badge/version-1.0.0-blue) ![C++20](https://img.shields.io/badge/C%2B%2B-20-blue)
 
 A lightweight C++ library designed to parse [JSON files](https://www.json.org/json-en.html) into native data types.
 
