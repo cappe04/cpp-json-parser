@@ -2,15 +2,12 @@
 
 A lightweight C++ library designed to parse [JSON files](https://www.json.org/json-en.html) into native data types.
 
-> Note: As of now, only the header files with documentation has been added.
-
-
 #### TODO:
 - [x] Documentation
 - [x] License
 - [x] Rest of code
-- [ ] Cool build system with CMake
-- [ ] Tests
+- [x] Cool build system with CMake (have not tried on diffrent platforms yet)
+- [ ] Tests (_WIP_)
 - [ ] Faster key lookup (Bin-search or MPHF?)
 
 ## Usage
@@ -29,6 +26,20 @@ This class manages the parsed JSON in memory and is sole owner of it. The parsed
 A `View` is the only way to interact with the parsed JSON data and does not take any ownership of the memory, this means that a `View` cannot be used without the `Document` instance being alive.
 
 The `View` struct allows you to cast data to a specific types and provides access to JSON object fields or array items.
+
+## Build
+This library can be built for static linking using CMake.
+
+To build run:
+```
+cmake -S . -B build
+```
+and then:
+```
+cmake --build build
+```
+
+Which results in a file `build/libjson_parser.a` or `build/json_parser.lib`.
 
 ## Examples
 Let this be the input file:
@@ -69,3 +80,16 @@ doxygen Doxyfile
 
 ## License
 This project is licensed under the BSD 2-Clause License - see the LICENSE file for details.
+
+## Tests
+To build and run tests:
+
+```
+cmake -S . -B build 
+```
+```
+cmake --build build 
+```
+```
+ctest --test-dir build -V
+```
