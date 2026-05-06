@@ -1,0 +1,6 @@
+{
+  "prices": {
+    "apple": 1.2,
+    banana: "two"
+  }
+}
