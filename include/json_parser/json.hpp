@@ -33,7 +33,7 @@ namespace json {
      * @warning If the document that a View instansce is pointing to is
      destroyed, using the View will result in "use after free".
 
-     * @note As the constructor is private, use Document::top_level() to get
+     * @note As the constructor is private, use Document::top_view() to get
      access to the top level View, then use either View::operator[],
      View::try_get(), or View::try_at() to access subsequent views.
 

@@ -246,18 +246,26 @@ namespace {
 
             if(ok() && peek() == '.') {
                 consume();
+                if(!ok() || !is_digit()) {
+                    reset_attempt();
+                    return LexerResult::fail();
+                }
                 while(ok() && is_digit()) consume();
             }
             
             if(ok() && (peek() == 'e' || peek() == 'E')) {
                 consume();
                 ok() && (expect('-') || expect('+'));
+                if(!ok() || !is_digit()) {
+                    reset_attempt();
+                    return LexerResult::fail();
+                }
                 while(ok() && is_digit()) consume();
             }
 
             if(start - end == 0) {
                 reset_attempt();
-                LexerResult::fail();
+                return LexerResult::fail();
             }
 
             return LexerResult::success(source_view.substr(start, end - start));
@@ -339,8 +347,8 @@ struct Parser::Impl {
     std::stringstream err;
     bool status;
 
-    void error_expected(char c) {
-        err << "Expected a \"" << c
+    void error_expected(std::string expected) {
+        err << "Expected a \"" << expected
             << "\" at row " << lexer.row 
             << " and column "<< lexer.column 
             << ", got " << (*lexer.source)[lexer.end] 
@@ -417,7 +425,7 @@ struct Parser::Impl {
             }
 
             if(lexer.get_char(',').status != Status::Success) {
-                error_expected(',');
+                error_expected(",");
                 builder.bail();
                 return ParserResult::error();
             }
@@ -443,6 +451,7 @@ struct Parser::Impl {
             if(lr.status == Status::Success) {
                 builder.add_child(JsonNode(JsonValue::String, lr.sv));
             } else {
+                error_expected("string");
                 builder.bail();
                 return ParserResult::error();
             }
@@ -450,7 +459,7 @@ struct Parser::Impl {
             lexer.whitespace();
 
             if(lexer.get_char(':').status != Status::Success) {
-                error_expected(':');
+                error_expected(":");
                 builder.bail();
                 return ParserResult::error();
             }
@@ -468,7 +477,7 @@ struct Parser::Impl {
             }
 
             if(lexer.get_char(',').status != Status::Success) {
-                error_expected(',');
+                error_expected(",");
                 builder.bail();
                 return ParserResult::error();
             }
