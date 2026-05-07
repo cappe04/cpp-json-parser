@@ -83,6 +83,28 @@ std::string View::to_string() const noexcept {
     return node->to_string();
 }
 
+uint32_t json::View::array_size() const noexcept {
+    if(!is_array()) {
+        return 0;
+    };
+    
+    return node->composite.size;
+};
+
+std::vector<std::string> json::View::object_keys() const noexcept {
+    std::vector<std::string> vec;
+    if(!is_object()) {
+        return vec;
+    };
+
+    for(int i = 0; i<node->composite.size; i += 2) {
+        std::string s(node->composite.child[i].literal.sv);
+        vec.push_back(s);
+    };
+
+    return vec;
+} 
+
 ///// View::as templates //////
 
 // Numbers
@@ -97,6 +119,9 @@ static std::optional<T> as_number(std::string_view sv) {
 }
 
 #define VIEW_AS_NUMBER(t) \
+    if(node->value != JsonValue::Number) { \
+        JSON_THROW(JSON_WRONG_TYPE, "Could not convert View to " #t); \
+    }; \
     std::optional<t> value = as_number<t>(node->literal.sv); \
     if(value) { \
         return value.value(); \
@@ -112,7 +137,18 @@ template<>      double           View::as<double>()          const { VIEW_AS_NUM
 // Not numbers
 template<>
 std::string View::as<std::string>() const {
+    if(!is_literal()) {
+        JSON_THROW(JSON_WRONG_TYPE, "View must be literal type to convert to std::string.");
+    };
     return std::string(node->literal.sv);
+};
+
+template<>
+std::string_view View::as<std::string_view>() const {
+    if(!is_literal()) {
+        JSON_THROW(JSON_WRONG_TYPE, "View must be literal type to convert to std::string_view.");
+    };
+    return node->literal.sv;
 };
 
 template<>

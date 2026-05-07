@@ -13,6 +13,7 @@
 #include <sstream>
 #include <cstdint>
 #include <string_view>
+#include <vector>
 
 /**
  * @namespace json
@@ -101,23 +102,40 @@ namespace json {
         std::string to_string() const noexcept;
 
         /**
+         * @brief Get the amount of elements in array type.
+         * @returns The amount of elements in the array type. If the View isn't an array
+         * type it will return 0
+         */
+        uint32_t array_size() const noexcept;
+
+        /**
+         * @brief Get the keys of object type.
+         * @returns A vector of strings containing the keys of the object type.
+         * If the View isn't an object type it will return an empty vector.
+         */
+        std::vector<std::string> object_keys() const noexcept;
+
+        /**
          * @brief Parse View to typename T
          * @warning This only works if this View instance is a literal type.
          * Will throw an error otherwise (which?).
          * @tparam T The type to parse View into.
          *  The build supported types are:
-         * - int
-         * - unsigned int
+         * - int (_will remove decimals_)
+         * - unsigned int (_will remove decimals_)
          * - float
          * - double
          * - std::string
-         * - bool
+         * - std::string_view
+         * - bool (_anything that isnt `false` will return true_)
          * 
+         * However
          * To add support for a custom type, define:
          * @code
          * template<>
          * MyType View::as<MyType>() { ... }
          * @endcode
+         * 
          */
         template<typename T>
         T as() const;
@@ -133,6 +151,25 @@ namespace json {
                 return std::nullopt;
             };
             return as<T>();
+        };
+
+
+        /**
+         * @brief Parse an array type to a vector<T>.
+         * @tparam T Type to be parsed as. See View::as() for supported types.
+         * @returns A std::vector<T>. If the View isn't an array type it will 
+         * return an empty vector.
+         */
+        template<typename T>
+        std::vector<T> as_vector() const {
+            std::vector<T> vec;
+            if (!is_array()) {
+                return vec;
+            }
+            for(int i = 0; i<node->composite.size; ++i) {
+                vec.push_back(this->at_as<T>(i));
+            }
+            return vec;
         };
 
         /**
