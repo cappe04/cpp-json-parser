@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['c_2b_2b_20json_20parser_20_3cimg_20src_3d_22https_3a_2f_2fimg_2eshields_2eio_2fbadge_2fc_252b_252b_2d20_2dblue_22_20alt_3d_22c_2b_2b20_22_2f_3e_4',['C++ Json Parser &lt;img src=&quot;https://img.shields.io/badge/C%2B%2B-20-blue&quot; alt=&quot;C++20&quot;/&gt;',['../index.html',1,'']]],
-  ['child_5',['child',['../structjson_1_1detail_1_1JsonNode.html#a4ee20b24a5b5c0e44f44520db4db8460',1,'json::detail::JsonNode']]],
-  ['composite_6',['composite',['../structjson_1_1detail_1_1JsonNode.html#abfc6cebc8b715c5112781cd4947a9aa1',1,'json::detail::JsonNode']]]
+  ['c_2b_2b_20json_20parser_20_3cimg_20src_3d_22https_3a_2f_2fimg_2eshields_2eio_2fbadge_2fversion_2d1_2e0_2e0_2dblue_22_20alt_3d_22version_22_2f_3e_20_3cimg_20src_3d_22https_3a_2f_2fimg_2eshields_2eio_2fbadge_2fc_252b_252b_2d20_2dblue_22_20alt_3d_22c_2b_2b20_22_2f_3e_6',['C++ Json Parser &lt;img src=&quot;https://img.shields.io/badge/version-1.0.0-blue&quot; alt=&quot;Version&quot;/&gt; &lt;img src=&quot;https://img.shields.io/badge/C%2B%2B-20-blue&quot; alt=&quot;C++20&quot;/&gt;',['../index.html',1,'']]],
+  ['child_7',['child',['../structjson_1_1detail_1_1JsonNode.html#a4ee20b24a5b5c0e44f44520db4db8460',1,'json::detail::JsonNode']]],
+  ['composite_8',['composite',['../structjson_1_1detail_1_1JsonNode.html#abfc6cebc8b715c5112781cd4947a9aa1',1,'json::detail::JsonNode']]]
 ];

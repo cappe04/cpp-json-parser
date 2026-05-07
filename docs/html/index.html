@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Json Parser: C++ Json Parser &lt;img src=&quot;https://img.shields.io/badge/C%2B%2B-20-blue&quot; alt=&quot;C++20&quot;/&gt;</title>
+<title>Json Parser: C++ Json Parser &lt;img src=&quot;https://img.shields.io/badge/version-1.0.0-blue&quot; alt=&quot;Version&quot;/&gt; &lt;img src=&quot;https://img.shields.io/badge/C%2B%2B-20-blue&quot; alt=&quot;C++20&quot;/&gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,10 +62,13 @@ $(function() {
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">C++ Json Parser <img src="https://img.shields.io/badge/C%2B%2B-20-blue" alt="C++20" class="inline"/> </div>  </div>
+<div class="title">C++ Json Parser <img src="https://img.shields.io/badge/version-1.0.0-blue" alt="Version" class="inline"/> <img src="https://img.shields.io/badge/C%2B%2B-20-blue" alt="C++20" class="inline"/> </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> A lightweight C++ library designed to parse <a href="https://www.json.org/json-en.html">JSON files</a> into native data types.</p>
+<blockquote class="doxtable">
+<p>[!WARNING] Requires C++20 or newer </p>
+</blockquote>
 <h3><a class="anchor" id="autotoc_md1"></a>
 TODO:</h3>
 <ul>
@@ -77,15 +80,11 @@ TODO:</h3>
 <li>[ ] Faster key lookup (Bin-search or MPHF?)</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
-Requirements</h1>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Tool   </th><th class="markdownTableHeadNone">Version    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">C++   </td><td class="markdownTableBodyNone">C++20    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">CMake   </td><td class="markdownTableBodyNone">3.10 or newer   </td></tr>
-</table>
+Build</h1>
+<p>This library can be built for static linking using CMake.</p>
+<p>To build, run: </p><div class="fragment"><div class="line">cmake -S . -B build</div>
+</div><!-- fragment --><p> and then: </p><div class="fragment"><div class="line">cmake --build build</div>
+</div><!-- fragment --><p>Which results in a file <code>libjson_parser.a</code> or <code>json_parser.lib</code>.</p>
 <h1><a class="anchor" id="autotoc_md3"></a>
 Usage</h1>
 <p>The libraries main functianality is split into 3 diffrent classes / structs, all under the namespace <code>json</code> and all in the header <code><a class="el" href="json_8hpp.html" title="All library functionality.">json_parser/json.hpp</a></code>.</p>
@@ -103,12 +102,6 @@ Usage</h1>
 <p>A <code>View</code> is the only way to interact with the parsed JSON data and does not take any ownership of the memory, this means that a <code>View</code> cannot be used without the <code>Document</code> instance being alive.</p>
 <p>The <code>View</code> struct allows you to cast data to a specific types and provides access to JSON object fields or array items.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Build</h1>
-<p>This library can be built for static linking using CMake.</p>
-<p>To build run: </p><div class="fragment"><div class="line">cmake -S . -B build</div>
-</div><!-- fragment --><p> and then: </p><div class="fragment"><div class="line">cmake --build build</div>
-</div><!-- fragment --><p>Which results in a file <code>libjson_parser.a</code> or <code>json_parser.lib</code>.</p>
-<h1><a class="anchor" id="autotoc_md5"></a>
 Examples</h1>
 <p>Let this be the input file: </p><div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;foo&quot;: {</div>
@@ -131,29 +124,29 @@ Examples</h1>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// ...</span></div>
-<div class="ttc" id="aclassjson_1_1Document_html"><div class="ttname"><a href="classjson_1_1Document.html">json::Document</a></div><div class="ttdoc">Parsed JSON document.</div><div class="ttdef"><b>Definition:</b> json.hpp:180</div></div>
+<div class="ttc" id="aclassjson_1_1Document_html"><div class="ttname"><a href="classjson_1_1Document.html">json::Document</a></div><div class="ttdoc">Parsed JSON document.</div><div class="ttdef"><b>Definition:</b> json.hpp:217</div></div>
 <div class="ttc" id="aclassjson_1_1Document_html_a21d36ca25806e5a0ddc6e453a03849bd"><div class="ttname"><a href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd">json::Document::top_view</a></div><div class="ttdeci">View top_view() const noexcept</div><div class="ttdoc">Gets the top level View.</div></div>
-<div class="ttc" id="aclassjson_1_1Parser_html"><div class="ttname"><a href="classjson_1_1Parser.html">json::Parser</a></div><div class="ttdoc">Parses JSON.</div><div class="ttdef"><b>Definition:</b> json.hpp:258</div></div>
+<div class="ttc" id="aclassjson_1_1Parser_html"><div class="ttname"><a href="classjson_1_1Parser.html">json::Parser</a></div><div class="ttdoc">Parses JSON.</div><div class="ttdef"><b>Definition:</b> json.hpp:295</div></div>
 <div class="ttc" id="ajson_8hpp_html"><div class="ttname"><a href="json_8hpp.html">json.hpp</a></div><div class="ttdoc">All library functionality.</div></div>
-<div class="ttc" id="astructjson_1_1View_html"><div class="ttname"><a href="structjson_1_1View.html">json::View</a></div><div class="ttdoc">A view into a Document.</div><div class="ttdef"><b>Definition:</b> json.hpp:46</div></div>
+<div class="ttc" id="astructjson_1_1View_html"><div class="ttname"><a href="structjson_1_1View.html">json::View</a></div><div class="ttdoc">A view into a Document.</div><div class="ttdef"><b>Definition:</b> json.hpp:47</div></div>
 <div class="ttc" id="astructjson_1_1View_html_ae60e0e1b42b8ebed05a83b170311537b"><div class="ttname"><a href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">json::View::as</a></div><div class="ttdeci">T as() const</div><div class="ttdoc">Parse View to typename T.</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
 Documentation</h1>
-<p>The documentation have been written in a doxygen-compatible format and can be viewed either normaly in the source code or through the doxygen generated HTML file <code>docs/html/index.html</code> (this might be hosted on a website later). If the file is missing it can be generated by running: </p><div class="fragment"><div class="line">doxygen Doxyfile</div>
-</div><!-- fragment --> <blockquote class="doxtable">
-<p>Note: this requires that <code>doxygen</code> is installed. </p>
+<p>The documentation have been written in a doxygen-compatible format and can be viewed either normally in the source code or through the doxygen generated HTML file <code>docs/html/index.html</code> (this might be hosted on a website later). If the file is missing it can be generated by running: </p><div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><blockquote class="doxtable">
+<p>[!NOTE] This requires that <code>doxygen</code> is installed. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md6"></a>
 License</h1>
 <p>This project is licensed under the BSD 2-Clause License - see the LICENSE file for details.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<h1><a class="anchor" id="autotoc_md7"></a>
 Tests</h1>
 <p>To build and run tests:</p>
 <div class="fragment"><div class="line">cmake -S . -B build </div>
 </div><!-- fragment --> <div class="fragment"><div class="line">cmake --build build </div>
 </div><!-- fragment --> <div class="fragment"><div class="line">ctest --test-dir build -V</div>
-</div><!-- fragment --> <blockquote class="doxtable">
-<p>Note: the last step to actually run the test might be a little bit diffrent depending on your compiler. </p>
+</div><!-- fragment --><blockquote class="doxtable">
+<p>[!NOTE] The last step to actually run the tests might be a little bit diffrent depending on your compiler. </p>
 </blockquote>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->

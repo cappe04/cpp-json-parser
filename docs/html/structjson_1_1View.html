@@ -105,6 +105,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab840959823008c50e97ad419db7afbc1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1View.html#ab840959823008c50e97ad419db7afbc1">to_string</a> () const noexcept</td></tr>
 <tr class="memdesc:ab840959823008c50e97ad419db7afbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">String representation of the view.  <a href="structjson_1_1View.html#ab840959823008c50e97ad419db7afbc1">More...</a><br /></td></tr>
 <tr class="separator:ab840959823008c50e97ad419db7afbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510561fe926e9e0d5aece56803eb0dce"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1View.html#a510561fe926e9e0d5aece56803eb0dce">array_size</a> () const noexcept</td></tr>
+<tr class="memdesc:a510561fe926e9e0d5aece56803eb0dce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the amount of elements in array type.  <a href="structjson_1_1View.html#a510561fe926e9e0d5aece56803eb0dce">More...</a><br /></td></tr>
+<tr class="separator:a510561fe926e9e0d5aece56803eb0dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa8af2075090a314be7c27f8629b245"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structjson_1_1View.html#a6aa8af2075090a314be7c27f8629b245">object_keys</a> () const noexcept</td></tr>
+<tr class="memdesc:a6aa8af2075090a314be7c27f8629b245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the keys of object type.  <a href="structjson_1_1View.html#a6aa8af2075090a314be7c27f8629b245">More...</a><br /></td></tr>
+<tr class="separator:a6aa8af2075090a314be7c27f8629b245"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae60e0e1b42b8ebed05a83b170311537b"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ae60e0e1b42b8ebed05a83b170311537b"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">as</a> () const</td></tr>
 <tr class="memdesc:ae60e0e1b42b8ebed05a83b170311537b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> to typename T.  <a href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">More...</a><br /></td></tr>
@@ -113,6 +119,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5409b5576712d33f50afd9b1479d504d"><td class="memTemplItemLeft" align="right" valign="top">std::optional&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">as_optional</a> () const</td></tr>
 <tr class="memdesc:a5409b5576712d33f50afd9b1479d504d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse Views that may be null.  <a href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">More...</a><br /></td></tr>
 <tr class="separator:a5409b5576712d33f50afd9b1479d504d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4a048759dfe648cd9c5eb667a6b6173"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac4a048759dfe648cd9c5eb667a6b6173"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">as_vector</a> () const</td></tr>
+<tr class="memdesc:ac4a048759dfe648cd9c5eb667a6b6173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse an array type to a vector&lt;T&gt;.  <a href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">More...</a><br /></td></tr>
+<tr class="separator:ac4a048759dfe648cd9c5eb667a6b6173"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcf1556303f917ad380edb3a17b6ff20"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:afcf1556303f917ad380edb3a17b6ff20"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">get_as</a> (std::string_view key) const</td></tr>
 <tr class="memdesc:afcf1556303f917ad380edb3a17b6ff20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper around <a class="el" href="structjson_1_1View.html#a9a1ede5441810f07a7ca7a3cfa12c64c" title="Access fields of JSON object.">View::operator[]</a> combined with <a class="el" href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b" title="Parse View to typename T.">View::as()</a>.  <a href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">More...</a><br /></td></tr>
@@ -133,6 +143,34 @@ Friends</h2></td></tr>
 <dl class="section note"><dt>Note</dt><dd>As the constructor is private, use <a class="el" href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd" title="Gets the top level View.">Document::top_view()</a> to get access to the top level <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a>, then use either <a class="el" href="structjson_1_1View.html#a9a1ede5441810f07a7ca7a3cfa12c64c" title="Access fields of JSON object.">View::operator[]</a>, <a class="el" href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6" title="Wrapper around View::operator[] that wont throw.">View::try_get()</a>, or <a class="el" href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85" title="Wrapper around View::operator[] that wont throw.">View::try_at()</a> to access subsequent views.</dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">Document</a> </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a510561fe926e9e0d5aece56803eb0dce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a510561fe926e9e0d5aece56803eb0dce">&#9670;&nbsp;</a></span>array_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t json::View::array_size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the amount of elements in array type. </p>
+<dl class="section return"><dt>Returns</dt><dd>The amount of elements in the array type. If the <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> isn't an array type it will return 0 </dd></dl>
+
+</div>
+</div>
 <a id="ae60e0e1b42b8ebed05a83b170311537b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae60e0e1b42b8ebed05a83b170311537b">&#9670;&nbsp;</a></span>as()</h2>
 
@@ -155,18 +193,19 @@ template&lt;typename T &gt; </div>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type to parse <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> into. The build supported types are:<ul>
-<li>int</li>
-<li>unsigned int</li>
+<li>int (<em>will remove decimals</em>)</li>
+<li>unsigned int (<em>will remove decimals</em>)</li>
 <li>float</li>
 <li>double</li>
 <li>std::string</li>
-<li>bool</li>
+<li>std::string_view</li>
+<li>bool (<em>anything that isnt <code>false</code> will return true</em>)</li>
 </ul>
 </td></tr>
   </table>
   </dd>
 </dl>
-<p>To add support for a custom type, define: </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;&gt;</div>
+<p>However To add support for a custom type, define: </p><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;&gt;</div>
 <div class="line">MyType View::as&lt;MyType&gt;() { ... }</div>
 </div><!-- fragment --> 
 </div>
@@ -204,6 +243,47 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Parsed value as type <code>T</code> or <code>std::nullopt</code> if <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> is of type null. </dd></dl>
+
+</div>
+</div>
+<a id="ac4a048759dfe648cd9c5eb667a6b6173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4a048759dfe648cd9c5eb667a6b6173">&#9670;&nbsp;</a></span>as_vector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;T&gt; json::View::as_vector </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse an array type to a vector&lt;T&gt;. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type to be parsed as. See <a class="el" href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b" title="Parse View to typename T.">View::as()</a> for supported types. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A std::vector&lt;T&gt;. If the <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> isn't an array type it will return an empty vector. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structjson_1_1View_ac4a048759dfe648cd9c5eb667a6b6173_cgraph.png" border="0" usemap="#astructjson_1_1View_ac4a048759dfe648cd9c5eb667a6b6173_cgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -306,6 +386,11 @@ template&lt;typename T &gt; </div>
 
 <p>Check if <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> is a array type. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>ture</code> if <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> is array type, else <code>false</code>. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structjson_1_1View_a7ddd74071180c6f7b7429d3510b2804f_icgraph.png" border="0" usemap="#astructjson_1_1View_a7ddd74071180c6f7b7429d3510b2804f_icgraph" alt=""/></div>
+</div>
 
 </div>
 </div>
@@ -362,6 +447,34 @@ template&lt;typename T &gt; </div>
 
 <p>Check if <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> is a object type. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>ture</code> if <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> is object type, else <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a6aa8af2075090a314be7c27f8629b245"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa8af2075090a314be7c27f8629b245">&#9670;&nbsp;</a></span>object_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; json::View::object_keys </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the keys of object type. </p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of strings containing the keys of the object type. If the <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> isn't an object type it will return an empty vector. </dd></dl>
 
 </div>
 </div>
