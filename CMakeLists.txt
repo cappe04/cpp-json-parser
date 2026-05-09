@@ -4,8 +4,11 @@ project(json_parser)
 
 
 add_library(json_parser STATIC
-    src/json_parser/json.cpp
-    src/json_parser/detail.cpp
+    src/json_parser/node.cpp
+    src/json_parser/view.cpp
+    src/json_parser/document.cpp
+    src/json_parser/parser.cpp
+    src/json_parser/functions.cpp
 )
 
 target_include_directories(json_parser
