@@ -337,12 +337,19 @@ namespace json {
         std::string get_error() const noexcept;
 
         /**
-         * @brief Gets the parsed document
+         * @brief Extract the parsed document
          * @returns a Document that is the sole owner of the parsed JSON.
          * @warning This should only be called if Parser::get_status() is true,
          * otherwise it will throw `json::exception::ParseError`.
          */
         Document get_document();
+        /**
+         * @brief Extract the parsed document as an `std::unique_ptr`
+         * @returns an `std::unique_ptr` to a Document that is the sole owner of the parsed JSON.
+         * @warning This should only be called if Parser::get_status() is true,
+         * otherwise it will throw `json::exception::ParseError`.
+         */
+        std::unique_ptr<Document> get_document_ptr();
 
     private:
         struct Impl; // pImpl design pattern
