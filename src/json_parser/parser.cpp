@@ -425,5 +425,12 @@ std::string Parser::get_error() const noexcept {
 
 Document Parser::get_document() {
     if(!impl->status) JSON_PARSER_THROW(ParseError, "Unable to get JSON document as an error occured during parsing or as it is un-parsed.");
+    impl->status = false;
     return Document(std::move(impl->root), impl->lexer.source);
+}
+
+std::unique_ptr<Document> Parser::get_document_ptr() {
+    if(!impl->status) JSON_PARSER_THROW(ParseError, "Unable to get JSON document as an error occured during parsing or as it is un-parsed.");
+    impl->status = false;
+    return std::unique_ptr<Document>(new Document(std::move(impl->root), impl->lexer.source));
 }
