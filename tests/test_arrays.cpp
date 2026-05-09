@@ -3,7 +3,6 @@
 #include "json_parser/json.hpp"
 
 using namespace json;
-using std::string;
 
 /**
  * @test Tests deeply nested arrays
@@ -29,11 +28,11 @@ void test_at_methods() {
     ASSERT_THROWS(view[5]);
     ASSERT_DOESNT_THROW(view.try_at(67));
 
-    ASSERT_EQ(view[3].as<string>(), "Hello!");
-    ASSERT_EQ(view.at_as<string>(3), "Hello!");
-    ASSERT_EQ(view.try_at(3).value().as<string>(), "Hello!");
+    ASSERT_EQ(view[3].as<std::string>(), "Hello!");
+    ASSERT_EQ(view.at_as<std::string>(3), "Hello!");
+    ASSERT_EQ(view.try_at(3).value().as<std::string>(), "Hello!");
 
-    ASSERT_THROWS(view.at_as<string>(67));
+    ASSERT_THROWS(view.at_as<std::string>(67));
 
     auto doc2 = parse_file(TEST_PATH_TO("empty.json"));
     auto empty_array = doc2.top_view()["array"];
