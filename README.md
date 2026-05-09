@@ -5,25 +5,27 @@ A lightweight C++ library designed to parse [JSON files](https://www.json.org/js
 > [!WARNING]
 > Requires C++20 or newer
 
-#### TODO:
-- [x] Documentation
-- [x] License
-- [x] Rest of code
-- [x] Cool build system with CMake (only tried with g++ on Linux and MSVC on Windows)
-- [ ] Tests (_WIP_)
-- [ ] Faster key lookup (Bin-search or MPHF?)
+#### Roadmap:
+- [ ] Dynamic linking support
+- [ ] Faster key lookup (Bin-search or MPHF)
 
 ## Build
-This library can be built for static linking using CMake.
+This library uses CMake and can be built as a static library.
 
-To build, run:
+### Configure the project
+
 ```
 cmake -S . -B build
 ```
-and then:
+### Build the library
 ```
 cmake --build build
 ```
+
+This will produce a static library file:
+
+- `libjson_parser.a` (Linux/macOS)
+- `json_parser.lib` (Windows)
 
 Which results in a file `libjson_parser.a` or `json_parser.lib`.
 
@@ -88,17 +90,16 @@ doxygen Doxyfile
 This project is licensed under the BSD 2-Clause License - see the LICENSE file for details.
 
 ## Tests
-To build and run tests:
+The project includes a test suite powered by CTest.
 
-```
-cmake -S . -B build 
-```
-```
-cmake --build build 
-```
+### Build the tests
+Same as building the project (see *Build*)
+
+### Run the test suite
 ```
 ctest --test-dir build -V
 ```
 
 > [!NOTE]
-> The last step to actually run the tests might be a little bit diffrent depending on your compiler.
+> **(MSVC / multi-config generators)**:
+> When using Visual Studio or other multi-config generators, you must specify the configuration with `-C {CONFIG}`.
