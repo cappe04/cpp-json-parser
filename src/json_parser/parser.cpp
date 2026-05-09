@@ -413,6 +413,12 @@ void Parser::parse() noexcept {
     } else if(pr.status == Status::Error) {
         return;
     }
+
+    impl->err << "JSON document must start with an object '{' or an array '[', not \"";
+    if(impl->lexer.source->length() > 0) {
+        impl->err << impl->lexer.source->at(0);
+    }
+    impl->err << "\"" << std::endl;
 }
 
 bool Parser::get_status() const noexcept {
