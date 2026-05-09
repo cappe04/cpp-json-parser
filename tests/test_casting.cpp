@@ -151,7 +151,7 @@ void test_custom_type_casting() {
 }
 
 TEST_CASE(test_casting) {
-    test_builtin_casting();
-    // test_optional_casting();
-    test_custom_type_casting();
+    TEST(test_builtin_casting);
+    TEST(test_optional_casting);
+    TEST(test_custom_type_casting);
 }

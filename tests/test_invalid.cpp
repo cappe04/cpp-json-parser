@@ -24,5 +24,5 @@ void test_syntax_errors() {
 }
 
 TEST_CASE(test_invalid) {
-    test_syntax_errors();
+    TEST(test_syntax_errors);
 }

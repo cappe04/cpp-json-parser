@@ -52,6 +52,6 @@ void test_get_methods() {
 
 
 TEST_CASE(test_objects) {
-    test_deep_nested();
-    test_get_methods();
+    TEST(test_deep_nested);
+    TEST(test_get_methods);
 }

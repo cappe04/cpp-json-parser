@@ -36,6 +36,10 @@ namespace test {
     } \
     void name()
 
+#define TEST(name) \
+    std::cout << "Testing " #name << std::endl; \
+    name();
+
 #define ASSERT_TRUE(expr) \
     do { \
         ++test::tests_run; \
@@ -54,7 +58,7 @@ namespace test {
     do { \
         ++test::tests_run; \
         try { \
-            (expr); \
+            expr; \
             ++test::tests_failed; \
             std::cout << "[FAIL] " << __FILE__ << ":" << __LINE__ \
                       << "-> " #expr " did not throw." << std::endl; \
@@ -65,7 +69,7 @@ namespace test {
     do { \
         ++test::tests_run; \
         try { \
-            (expr); \
+            expr; \
         } catch (const std::runtime_error& e) { \
             ++test::tests_failed; \
             std::cout << "[FAIL] " << __FILE__ << ":" << __LINE__ \

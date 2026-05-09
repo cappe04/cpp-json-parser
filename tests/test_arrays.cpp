@@ -43,6 +43,6 @@ void test_at_methods() {
 };
 
 TEST_CASE(test_arrays) {
-    test_deep_nested();
-    test_at_methods();
+    TEST(test_deep_nested);
+    TEST(test_at_methods);
 }
