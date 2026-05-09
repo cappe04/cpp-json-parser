@@ -1,0 +1,118 @@
+{
+  "system": {
+    "id": "root-001",
+    "metadata": {
+      "createdAt": "2026-05-06T12:00:00Z",
+      "version": "1.0.0",
+      "tags": ["example", "deep", "nested", "json"],
+      "owner": {
+        "id": "user-789",
+        "profile": {
+          "name": "Alex Doe",
+          "contact": {
+            "email": "alex@example.com",
+            "phones": [
+              {
+                "type": "mobile",
+                "number": "+123456789"
+              },
+              {
+                "type": "work",
+                "number": "+987654321"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "components": [
+      {
+        "componentId": "comp-1",
+        "type": "service",
+        "config": {
+          "enabled": true,
+          "endpoints": [
+            {
+              "url": "https://api.example.com/v1",
+              "methods": ["GET", "POST"],
+              "auth": {
+                "type": "OAuth2",
+                "scopes": ["read", "write"],
+                "tokens": {
+                  "access": "abc123",
+                  "refresh": "def456"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "componentId": "comp-2",
+        "type": "database",
+        "config": {
+          "engine": "postgresql",
+          "replicas": [
+            {
+              "region": "us-east-1",
+              "status": "active",
+              "metrics": {
+                "cpu": 72.5,
+                "memory": {
+                  "used": 2048,
+                  "total": 4096,
+                  "units": "MB"
+                },
+                "connections": {
+                  "current": 120,
+                  "max": 500,
+                  "history": [
+                    { "timestamp": "2026-05-06T10:00:00Z", "value": 98 },
+                    { "timestamp": "2026-05-06T11:00:00Z", "value": 110 }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "logs": {
+      "entries": [
+        {
+          "id": "log-1",
+          "level": "info",
+          "message": "System initialized",
+          "context": {
+            "trace": {
+              "id": "trace-abc",
+              "steps": [
+                {
+                  "step": "init",
+                  "status": "success",
+                  "details": {
+                    "durationMs": 34,
+                    "substeps": [
+                      {
+                        "name": "load-config",
+                        "result": "ok"
+                      },
+                      {
+                        "name": "connect-db",
+                        "result": "ok",
+                        "retries": [
+                          { "attempt": 1, "status": "failed" },
+                          { "attempt": 2, "status": "success" }
+                        ]
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+}
