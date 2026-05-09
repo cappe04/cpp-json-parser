@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['detail_20',['detail',['../namespacejson_1_1detail.html',1,'json']]],
-  ['json_2ehpp_21',['json.hpp',['../json_8hpp.html',1,'']]],
-  ['jsonnode_22',['JsonNode',['../structjson_1_1detail_1_1JsonNode.html',1,'json::detail::JsonNode'],['../structjson_1_1detail_1_1JsonNode.html#a842c642237ef0d8967a77a9cfa291d15',1,'json::detail::JsonNode::JsonNode()'],['../structjson_1_1detail_1_1JsonNode.html#a8918828c87e2039a7ebca1bfb3c1ce00',1,'json::detail::JsonNode::JsonNode(JsonValue value)'],['../structjson_1_1detail_1_1JsonNode.html#a0c13302593e00cd1c066abb25a67f738',1,'json::detail::JsonNode::JsonNode(JsonValue value, std::string_view sv)']]],
-  ['jsonvalue_23',['JsonValue',['../namespacejson_1_1detail.html#a204d18e390a45675166e71861a67418c',1,'json::detail']]]
+  ['indexoutofrange_18',['IndexOutOfRange',['../classjson_1_1exception_1_1IndexOutOfRange.html#a9be4e49110c0142d62025d03eec147bf',1,'json::exception::IndexOutOfRange::IndexOutOfRange()'],['../classjson_1_1exception_1_1IndexOutOfRange.html',1,'json::exception::IndexOutOfRange']]],
+  ['is_5farray_19',['is_array',['../structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f',1,'json::View']]],
+  ['is_5fliteral_20',['is_literal',['../structjson_1_1View.html#a4934047d5e37c5002714e938c31716ae',1,'json::View']]],
+  ['is_5fobject_21',['is_object',['../structjson_1_1View.html#ade6306d774a210335c3d1bb29eab67fd',1,'json::View']]]
 ];

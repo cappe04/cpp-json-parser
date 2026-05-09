@@ -189,7 +189,7 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Parse <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> to typename T. </p>
-<dl class="section warning"><dt>Warning</dt><dd>This only works if this <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> instance is a literal type. Will throw an error otherwise (which?). </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This only works if this <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> instance is a literal type. Will throw an <code><a class="el" href="classjson_1_1exception_1_1TypeError.html" title="Trying to make an impossible cast or use in a way that isn&#39;t allowed.">json::exception::TypeError</a></code> otherwise. </dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">T</td><td>The type to parse <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> into. The build supported types are:<ul>
@@ -495,7 +495,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Access fields of JSON object. </p>
-<dl class="section warning"><dt>Warning</dt><dd>throws if key isn't in the object. To avoid this use <a class="el" href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6" title="Wrapper around View::operator[] that wont throw.">View::try_get()</a> </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>throws <code><a class="el" href="classjson_1_1exception_1_1KeyError.html" title="Trying to access key that doesn&#39;t exist.">json::exception::KeyError</a></code> or <code><a class="el" href="classjson_1_1exception_1_1TypeError.html" title="Trying to make an impossible cast or use in a way that isn&#39;t allowed.">json::exception::TypeError</a></code> if key isn't in the object. To avoid this use <a class="el" href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6" title="Wrapper around View::operator[] that wont throw.">View::try_get()</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> to the value paired with <code>key</code>. </dd></dl>
 
 </div>
@@ -517,7 +517,7 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Access items of JSON array. </p>
-<dl class="section warning"><dt>Warning</dt><dd>throws if index is out of range for the array type. To avoid this use <a class="el" href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85" title="Wrapper around View::operator[] that wont throw.">View::try_at()</a> </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>throws <code><a class="el" href="classjson_1_1exception_1_1IndexOutOfRange.html" title="Trying to element that is out of range.">json::exception::IndexOutOfRange</a></code> or <code><a class="el" href="classjson_1_1exception_1_1TypeError.html" title="Trying to make an impossible cast or use in a way that isn&#39;t allowed.">json::exception::TypeError</a></code> if index is out of range for the array type. To avoid this use <a class="el" href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85" title="Wrapper around View::operator[] that wont throw.">View::try_at()</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="structjson_1_1View.html" title="A view into a Document.">View</a> to the value at <code>index</code>. </dd></dl>
 
 </div>

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['is_5farray_17',['is_array',['../structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f',1,'json::View']]],
-  ['is_5fliteral_18',['is_literal',['../structjson_1_1View.html#a4934047d5e37c5002714e938c31716ae',1,'json::View']]],
-  ['is_5fobject_19',['is_object',['../structjson_1_1View.html#ade6306d774a210335c3d1bb29eab67fd',1,'json::View']]]
+  ['get_5fas_14',['get_as',['../structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20',1,'json::View']]],
+  ['get_5fdocument_15',['get_document',['../classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39',1,'json::Parser']]],
+  ['get_5ferror_16',['get_error',['../classjson_1_1Parser.html#afd6c964e8399c97558493cb69e4554d0',1,'json::Parser']]],
+  ['get_5fstatus_17',['get_status',['../classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93',1,'json::Parser']]]
 ];

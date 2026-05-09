@@ -1,12 +1,13 @@
 // Copyright (c) 2026 Casper Bené
 // SPDX-License-Identifier: BSD-2-Clause
 
+#pragma once
+
 /**
  * @file detail/detail.hpp
  * @brief Private library functionality.
  */
 
-#include <stdint.h>
 #include <string_view>
 #include <string>
 #include <sstream>

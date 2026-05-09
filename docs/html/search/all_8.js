@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['null_25',['Null',['../namespacejson_1_1detail.html#a204d18e390a45675166e71861a67418cabbb93ef26e3c101ff11cdd21cab08a94',1,'json::detail']]],
-  ['number_26',['Number',['../namespacejson_1_1detail.html#a204d18e390a45675166e71861a67418cab2ee912b91d69b435159c7c3f6df7f5f',1,'json::detail']]]
+  ['keyerror_29',['KeyError',['../classjson_1_1exception_1_1KeyError.html',1,'json::exception::KeyError'],['../classjson_1_1exception_1_1KeyError.html#a63e2e6bd59374923fc316ca9f4ca92f7',1,'json::exception::KeyError::KeyError()']]]
 ];

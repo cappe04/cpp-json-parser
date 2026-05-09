@@ -6,6 +6,9 @@
  * @brief All library functionality.
  */
 
+
+#pragma once
+
 #include "detail/detail.hpp"
 
 #include <memory>
@@ -24,7 +27,7 @@
  * Usage Example 1:
  * @code
  * json::Document doc = json::open_document("./students.json");
- * json::View grades = doc.top_level()["grades"];
+ * json::View grades = doc.top_view()["grades"];
  * std::cout << grades["Casper"].as<int>() << std::endl; // output: 100 
  * @endcode
  * 
@@ -50,16 +53,16 @@ namespace json {
         
         /**
          * @brief Access fields of JSON object
-         * @warning throws if key isn't in the object. To avoid this
-         * use View::try_get()
+         * @warning throws `json::exception::KeyError` or `json::exception::TypeError`
+         * if key isn't in the object. To avoid this use View::try_get()
          * @returns a View to the value paired with `key`.
          */
         const View operator[](std::string_view key) const;
          
          /**
          * @brief Access items of JSON array
-         * @warning throws if index is out of range for the array type. To 
-         * avoid this use View::try_at()
+         * @warning throws `json::exception::IndexOutOfRange` or `json::exception::TypeError` 
+         * if index is out of range for the array type. To avoid this use View::try_at()
          * @returns a View to the value at `index`.
           */
         const View operator[](uint32_t index) const;
@@ -118,7 +121,7 @@ namespace json {
         /**
          * @brief Parse View to typename T
          * @warning This only works if this View instance is a literal type.
-         * Will throw an error otherwise (which?).
+         * Will throw an `json::exception::TypeError` otherwise.
          * @tparam T The type to parse View into.
          *  The build supported types are:
          * - int (_will remove decimals_)
@@ -302,7 +305,7 @@ namespace json {
 
         /**
          * @brief Class constructor
-         * * @param source THe JSON file as a string
+         * @param source The JSON file as a string
          */
         Parser(const std::string& source);
         /**
@@ -317,12 +320,12 @@ namespace json {
          * @details Will output eventuall parsing errors to internal buffer
          * which can be recieved with Parser::get_error().
          */
-        void parse();
+        void parse() noexcept;
 
         /**
          * @brief Get status of parsing attempt
          * @return `true` if parsing was successfull and it's safe to
-         * call Parser::get_doucent, `false` otherwise.
+         * call Parser::get_document, `false` otherwise.
          */
         bool get_status() const noexcept;
 
@@ -336,7 +339,8 @@ namespace json {
         /**
          * @brief Gets the parsed document
          * @returns a Document that is the sole owner of the parsed JSON.
-         * @warning This should only be called if Parser::get_status() is true.
+         * @warning This should only be called if Parser::get_status() is true,
+         * otherwise it will throw `json::exception::ParseError`.
          */
         Document get_document();
 
@@ -352,7 +356,7 @@ namespace json {
      * @param source std::string or std::shared_ptr to the source code of the JSON. 
      * @return Parsed JSON document.
      * 
-     * @warning Will raise exception if unable to parse JSON document. To avoid
+     * @warning Will throw `json::exception::ParseError` if unable to parse JSON document. To avoid
      * this use the Parser class.
      * 
      * @see Parser
@@ -369,7 +373,7 @@ namespace json {
      * @param path Path to file 
      * @return Parsed JSON document.
      * 
-     * @warning Will raise exception if unable to parse JSON document. To avoid
+     * @warning Will throw `json::exception::ParseError` if unable to parse JSON document. To avoid
      * this use the Parser class.
      * 
      * @warning Will raise exception if unable to open the file correctly.

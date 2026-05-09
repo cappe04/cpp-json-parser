@@ -72,148 +72,149 @@ $(function() {
 <a href="json_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (c) 2026 Casper Bené</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// SPDX-License-Identifier: BSD-2-Clause</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="detail_8hpp.html">detail/detail.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>json {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structjson_1_1View.html">   47</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structjson_1_1View.html">View</a> {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        </div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a9a1ede5441810f07a7ca7a3cfa12c64c">   57</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structjson_1_1View.html">View</a> <a class="code" href="structjson_1_1View.html#a9a1ede5441810f07a7ca7a3cfa12c64c">operator[]</a>(std::string_view key) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;         </div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a85a5aec491bc693db6548bb8cbaa3ac6">   65</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structjson_1_1View.html">View</a> <a class="code" href="structjson_1_1View.html#a85a5aec491bc693db6548bb8cbaa3ac6">operator[]</a>(uint32_t index) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6">   71</a></span>&#160;        <span class="keyword">const</span> std::optional&lt;View&gt; <a class="code" href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6">try_get</a>(std::string_view key) <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        </div>
-<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85">   77</a></span>&#160;        <span class="keyword">const</span> std::optional&lt;View&gt; <a class="code" href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85">try_at</a>(uint32_t index) <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a4934047d5e37c5002714e938c31716ae">   83</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structjson_1_1View.html#a4934047d5e37c5002714e938c31716ae">is_literal</a>() const noexcept;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        </div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f">   89</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f">is_array</a>() const noexcept;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        </div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ade6306d774a210335c3d1bb29eab67fd">   95</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structjson_1_1View.html#ade6306d774a210335c3d1bb29eab67fd">is_object</a>() const noexcept;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ab840959823008c50e97ad419db7afbc1">  102</a></span>&#160;        std::<span class="keywordtype">string</span> <a class="code" href="structjson_1_1View.html#ab840959823008c50e97ad419db7afbc1">to_string</a>() const noexcept;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a510561fe926e9e0d5aece56803eb0dce">  109</a></span>&#160;        uint32_t <a class="code" href="structjson_1_1View.html#a510561fe926e9e0d5aece56803eb0dce">array_size</a>() const noexcept;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a6aa8af2075090a314be7c27f8629b245">  116</a></span>&#160;        std::vector&lt;std::<span class="keywordtype">string</span>&gt; <a class="code" href="structjson_1_1View.html#a6aa8af2075090a314be7c27f8629b245">object_keys</a>() const noexcept;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        template&lt;typename T&gt;</div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">  141</a></span>&#160;        T <a class="code" href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">as</a>() const;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        template&lt;typename T&gt;</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">  149</a></span>&#160;        std::optional&lt;T&gt; <a class="code" href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">as_optional</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;            <span class="keywordflow">if</span> (node-&gt;<a class="code" href="structjson_1_1detail_1_1JsonNode.html#a7a6a4eb568368cdfc5634bbdd39af689">value</a> == <a class="code" href="namespacejson_1_1detail.html#a204d18e390a45675166e71861a67418cabbb93ef26e3c101ff11cdd21cab08a94">detail::JsonValue::Null</a>) {</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            };</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">return</span> as&lt;T&gt;();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        };</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">  164</a></span>&#160;        std::vector&lt;T&gt; <a class="code" href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">as_vector</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            std::vector&lt;T&gt; vec;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f">is_array</a>()) {</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                <span class="keywordflow">return</span> vec;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;node-&gt;<a class="code" href="structjson_1_1detail_1_1JsonNode.html#abfc6cebc8b715c5112781cd4947a9aa1">composite</a>.size; ++i) {</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                vec.push_back(this-&gt;at_as&lt;T&gt;(i));</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="detail_8hpp.html">detail/detail.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;string_view&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>json {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structjson_1_1View.html">   50</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structjson_1_1View.html">View</a> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a9a1ede5441810f07a7ca7a3cfa12c64c">   60</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structjson_1_1View.html">View</a> <a class="code" href="structjson_1_1View.html#a9a1ede5441810f07a7ca7a3cfa12c64c">operator[]</a>(std::string_view key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;         </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a85a5aec491bc693db6548bb8cbaa3ac6">   68</a></span>&#160;        <span class="keyword">const</span> <a class="code" href="structjson_1_1View.html">View</a> <a class="code" href="structjson_1_1View.html#a85a5aec491bc693db6548bb8cbaa3ac6">operator[]</a>(uint32_t index) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6">   74</a></span>&#160;        <span class="keyword">const</span> std::optional&lt;View&gt; <a class="code" href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6">try_get</a>(std::string_view key) <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85">   80</a></span>&#160;        <span class="keyword">const</span> std::optional&lt;View&gt; <a class="code" href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85">try_at</a>(uint32_t index) <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a4934047d5e37c5002714e938c31716ae">   86</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structjson_1_1View.html#a4934047d5e37c5002714e938c31716ae">is_literal</a>() const noexcept;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f">   92</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f">is_array</a>() const noexcept;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        </div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ade6306d774a210335c3d1bb29eab67fd">   98</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="structjson_1_1View.html#ade6306d774a210335c3d1bb29eab67fd">is_object</a>() const noexcept;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ab840959823008c50e97ad419db7afbc1">  105</a></span>&#160;        std::<span class="keywordtype">string</span> <a class="code" href="structjson_1_1View.html#ab840959823008c50e97ad419db7afbc1">to_string</a>() const noexcept;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a510561fe926e9e0d5aece56803eb0dce">  112</a></span>&#160;        uint32_t <a class="code" href="structjson_1_1View.html#a510561fe926e9e0d5aece56803eb0dce">array_size</a>() const noexcept;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a6aa8af2075090a314be7c27f8629b245">  119</a></span>&#160;        std::vector&lt;std::<span class="keywordtype">string</span>&gt; <a class="code" href="structjson_1_1View.html#a6aa8af2075090a314be7c27f8629b245">object_keys</a>() const noexcept;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        template&lt;typename T&gt;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">  144</a></span>&#160;        T <a class="code" href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">as</a>() const;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        template&lt;typename T&gt;</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">  152</a></span>&#160;        std::optional&lt;T&gt; <a class="code" href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">as_optional</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keywordflow">if</span> (node-&gt;<a class="code" href="structjson_1_1detail_1_1JsonNode.html#a7a6a4eb568368cdfc5634bbdd39af689">value</a> == <a class="code" href="namespacejson_1_1detail.html#a204d18e390a45675166e71861a67418cabbb93ef26e3c101ff11cdd21cab08a94">detail::JsonValue::Null</a>) {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            };</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <span class="keywordflow">return</span> as&lt;T&gt;();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        };</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">  167</a></span>&#160;        std::vector&lt;T&gt; <a class="code" href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">as_vector</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            std::vector&lt;T&gt; vec;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">if</span> (!<a class="code" href="structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f">is_array</a>()) {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordflow">return</span> vec;</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;            }</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">return</span> vec;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        };</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">  181</a></span>&#160;        T <a class="code" href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">get_as</a>(std::string_view key)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[key].as&lt;T&gt;(); };</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a4409a086a755ed099da0842fa61239b5">  189</a></span>&#160;        T <a class="code" href="structjson_1_1View.html#a4409a086a755ed099da0842fa61239b5">at_as</a>(uint32_t index)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index].as&lt;T&gt;(); };</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        <a class="code" href="structjson_1_1View.html">View</a>(<span class="keyword">const</span> <a class="code" href="structjson_1_1detail_1_1JsonNode.html">detail::JsonNode</a>* <span class="keyword">const</span> node);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keyword">const</span> <a class="code" href="structjson_1_1detail_1_1JsonNode.html">detail::JsonNode</a>* <span class="keyword">const</span> node;</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a883538034e58fc5c0de7d4e4cab3cef7">  201</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classjson_1_1Document.html">Document</a>;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    };</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i&lt;node-&gt;<a class="code" href="structjson_1_1detail_1_1JsonNode.html#abfc6cebc8b715c5112781cd4947a9aa1">composite</a>.size; ++i) {</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                vec.push_back(this-&gt;at_as&lt;T&gt;(i));</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            }</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            <span class="keywordflow">return</span> vec;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        };</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">  184</a></span>&#160;        T <a class="code" href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">get_as</a>(std::string_view key)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[key].as&lt;T&gt;(); };</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a4409a086a755ed099da0842fa61239b5">  192</a></span>&#160;        T <a class="code" href="structjson_1_1View.html#a4409a086a755ed099da0842fa61239b5">at_as</a>(uint32_t index)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (*<span class="keyword">this</span>)[index].as&lt;T&gt;(); };</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160; </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        <a class="code" href="structjson_1_1View.html">View</a>(<span class="keyword">const</span> <a class="code" href="structjson_1_1detail_1_1JsonNode.html">detail::JsonNode</a>* <span class="keyword">const</span> node);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keyword">const</span> <a class="code" href="structjson_1_1detail_1_1JsonNode.html">detail::JsonNode</a>* <span class="keyword">const</span> node;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html">  217</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classjson_1_1Document.html">Document</a> {</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f">  225</a></span>&#160;        <a class="code" href="classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f">~Document</a>();</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#af6822f946139a11dcacb7b3d30cfe896">  230</a></span>&#160;        std::string <a class="code" href="classjson_1_1Document.html#af6822f946139a11dcacb7b3d30cfe896">to_string</a>() const noexcept;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd">  237</a></span>&#160;        <a class="code" href="structjson_1_1View.html">View</a> <a class="code" href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd">top_view</a>() const noexcept;</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#a9ac335ca133fd261edaefefaf09bda02">  244</a></span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a>(const <a class="code" href="classjson_1_1Document.html">Document</a>&amp;) = delete;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00250"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#a2eb58e04c19530ca0521367434119ff1">  250</a></span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a>&amp; operator=(const <a class="code" href="classjson_1_1Document.html">Document</a>&amp;) = delete;</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    private:</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a>(std::unique_ptr&lt;detail::JsonNode&gt; root,</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                 std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source);</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        std::unique_ptr&lt;detail::JsonNode&gt; root;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source;</div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="structjson_1_1View.html#a883538034e58fc5c0de7d4e4cab3cef7">  204</a></span>&#160;        <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="classjson_1_1Document.html">Document</a>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    };</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html">  220</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classjson_1_1Document.html">Document</a> {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f">  228</a></span>&#160;        <a class="code" href="classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f">~Document</a>();</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
+<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#af6822f946139a11dcacb7b3d30cfe896">  233</a></span>&#160;        std::string <a class="code" href="classjson_1_1Document.html#af6822f946139a11dcacb7b3d30cfe896">to_string</a>() const noexcept;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd">  240</a></span>&#160;        <a class="code" href="structjson_1_1View.html">View</a> <a class="code" href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd">top_view</a>() const noexcept;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160; </div>
+<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#a9ac335ca133fd261edaefefaf09bda02">  247</a></span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a>(const <a class="code" href="classjson_1_1Document.html">Document</a>&amp;) = delete;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#a2eb58e04c19530ca0521367434119ff1">  253</a></span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a>&amp; operator=(const <a class="code" href="classjson_1_1Document.html">Document</a>&amp;) = delete;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    private:</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a>(std::unique_ptr&lt;detail::JsonNode&gt; root,</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                 std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source);</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160; </div>
-<div class="line"><a name="l00264"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#ab80291af9c262f63b83fa9c16f12014d">  264</a></span>&#160;        friend class <a class="code" href="classjson_1_1Parser.html">Parser</a>;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    };</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    </div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html">  295</a></span>&#160;    class <a class="code" href="classjson_1_1Parser.html">Parser</a> {</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#a76e1338fbf4946a5d67a491b38c9d29a">  301</a></span>&#160;        <a class="code" href="classjson_1_1Parser.html#a76e1338fbf4946a5d67a491b38c9d29a">Parser</a>(std::shared_ptr&lt;const std::string&gt; source);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#aa39460bfe687ee25e424f4629a39fd2a">  307</a></span>&#160;        <a class="code" href="classjson_1_1Parser.html#aa39460bfe687ee25e424f4629a39fd2a">Parser</a>(<span class="keyword">const</span> std::string&amp; source);</div>
-<div class="line"><a name="l00313"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5">  313</a></span>&#160;        <a class="code" href="classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5">~Parser</a>();</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#a047f17f36b7036df289908c4d4bb7a28">  320</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classjson_1_1Parser.html#a047f17f36b7036df289908c4d4bb7a28">parse</a>();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93">  327</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93">get_status</a>() const noexcept;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
-<div class="line"><a name="l00334"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#afd6c964e8399c97558493cb69e4554d0">  334</a></span>&#160;        std::<span class="keywordtype">string</span> get_error() const noexcept;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39">  341</a></span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a> get_document();</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    private:</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        struct Impl; <span class="comment">// pImpl design pattern</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        std::unique_ptr&lt;Impl&gt; impl;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    };</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    </div>
-<div class="line"><a name="l00360"></a><span class="lineno"><a class="line" href="json_8hpp.html#a92cab4c64d03950048afe84744ea43ef">  360</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(const std::<span class="keywordtype">string</span>&amp; source);</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno"><a class="line" href="json_8hpp.html#a1a79e0f84fc51fca097df0108d7fe770">  365</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source);</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    </div>
-<div class="line"><a name="l00379"></a><span class="lineno"><a class="line" href="json_8hpp.html#a40ecb1a406f44666279b733820e3f067">  379</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_file(std::string_view path);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;};</div>
-<div class="ttc" id="aclassjson_1_1Document_html"><div class="ttname"><a href="classjson_1_1Document.html">json::Document</a></div><div class="ttdoc">Parsed JSON document.</div><div class="ttdef"><b>Definition:</b> json.hpp:217</div></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        std::unique_ptr&lt;detail::JsonNode&gt; root;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160; </div>
+<div class="line"><a name="l00267"></a><span class="lineno"><a class="line" href="classjson_1_1Document.html#ab80291af9c262f63b83fa9c16f12014d">  267</a></span>&#160;        friend class <a class="code" href="classjson_1_1Parser.html">Parser</a>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    };</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    </div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html">  298</a></span>&#160;    class <a class="code" href="classjson_1_1Parser.html">Parser</a> {</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00304"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#a76e1338fbf4946a5d67a491b38c9d29a">  304</a></span>&#160;        <a class="code" href="classjson_1_1Parser.html#a76e1338fbf4946a5d67a491b38c9d29a">Parser</a>(std::shared_ptr&lt;const std::string&gt; source);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#aa39460bfe687ee25e424f4629a39fd2a">  310</a></span>&#160;        <a class="code" href="classjson_1_1Parser.html#aa39460bfe687ee25e424f4629a39fd2a">Parser</a>(<span class="keyword">const</span> std::string&amp; source);</div>
+<div class="line"><a name="l00316"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5">  316</a></span>&#160;        <a class="code" href="classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5">~Parser</a>();</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#a0213db778fcaa4428ea2be82f1bbd74b">  323</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classjson_1_1Parser.html#a0213db778fcaa4428ea2be82f1bbd74b">parse</a>() noexcept;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
+<div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93">  330</a></span>&#160;        <span class="keywordtype">bool</span> get_status() const noexcept;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#afd6c964e8399c97558493cb69e4554d0">  337</a></span>&#160;        std::<span class="keywordtype">string</span> get_error() const noexcept;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39">  345</a></span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a> get_document();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    private:</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        struct Impl; <span class="comment">// pImpl design pattern</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        std::unique_ptr&lt;Impl&gt; impl;</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    };</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    </div>
+<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="json_8hpp.html#a92cab4c64d03950048afe84744ea43ef">  364</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(const std::<span class="keywordtype">string</span>&amp; source);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="json_8hpp.html#a1a79e0f84fc51fca097df0108d7fe770">  369</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    </div>
+<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="json_8hpp.html#a40ecb1a406f44666279b733820e3f067">  383</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_file(std::string_view path);</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;};</div>
+<div class="ttc" id="aclassjson_1_1Document_html"><div class="ttname"><a href="classjson_1_1Document.html">json::Document</a></div><div class="ttdoc">Parsed JSON document.</div><div class="ttdef"><b>Definition:</b> json.hpp:220</div></div>
 <div class="ttc" id="aclassjson_1_1Document_html_a21d36ca25806e5a0ddc6e453a03849bd"><div class="ttname"><a href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd">json::Document::top_view</a></div><div class="ttdeci">View top_view() const noexcept</div><div class="ttdoc">Gets the top level View.</div></div>
 <div class="ttc" id="aclassjson_1_1Document_html_abdd5fe2a3047f43d69d24abef49c816f"><div class="ttname"><a href="classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f">json::Document::~Document</a></div><div class="ttdeci">~Document()</div><div class="ttdoc">Class destructor.</div></div>
 <div class="ttc" id="aclassjson_1_1Document_html_af6822f946139a11dcacb7b3d30cfe896"><div class="ttname"><a href="classjson_1_1Document.html#af6822f946139a11dcacb7b3d30cfe896">json::Document::to_string</a></div><div class="ttdeci">std::string to_string() const noexcept</div><div class="ttdoc">String representation of the JSON document.</div></div>
-<div class="ttc" id="aclassjson_1_1Parser_html"><div class="ttname"><a href="classjson_1_1Parser.html">json::Parser</a></div><div class="ttdoc">Parses JSON.</div><div class="ttdef"><b>Definition:</b> json.hpp:295</div></div>
-<div class="ttc" id="aclassjson_1_1Parser_html_a047f17f36b7036df289908c4d4bb7a28"><div class="ttname"><a href="classjson_1_1Parser.html#a047f17f36b7036df289908c4d4bb7a28">json::Parser::parse</a></div><div class="ttdeci">void parse()</div><div class="ttdoc">Parse JSON.</div></div>
-<div class="ttc" id="aclassjson_1_1Parser_html_a4eacdfeb762a1f02a1a30c2302adcc93"><div class="ttname"><a href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93">json::Parser::get_status</a></div><div class="ttdeci">bool get_status() const noexcept</div><div class="ttdoc">Get status of parsing attempt.</div></div>
+<div class="ttc" id="aclassjson_1_1Parser_html"><div class="ttname"><a href="classjson_1_1Parser.html">json::Parser</a></div><div class="ttdoc">Parses JSON.</div><div class="ttdef"><b>Definition:</b> json.hpp:298</div></div>
+<div class="ttc" id="aclassjson_1_1Parser_html_a0213db778fcaa4428ea2be82f1bbd74b"><div class="ttname"><a href="classjson_1_1Parser.html#a0213db778fcaa4428ea2be82f1bbd74b">json::Parser::parse</a></div><div class="ttdeci">void parse() noexcept</div><div class="ttdoc">Parse JSON.</div></div>
 <div class="ttc" id="aclassjson_1_1Parser_html_a76e1338fbf4946a5d67a491b38c9d29a"><div class="ttname"><a href="classjson_1_1Parser.html#a76e1338fbf4946a5d67a491b38c9d29a">json::Parser::Parser</a></div><div class="ttdeci">Parser(std::shared_ptr&lt; const std::string &gt; source)</div><div class="ttdoc">Class constructor.</div></div>
 <div class="ttc" id="aclassjson_1_1Parser_html_aa39460bfe687ee25e424f4629a39fd2a"><div class="ttname"><a href="classjson_1_1Parser.html#aa39460bfe687ee25e424f4629a39fd2a">json::Parser::Parser</a></div><div class="ttdeci">Parser(const std::string &amp;source)</div><div class="ttdoc">Class constructor.</div></div>
 <div class="ttc" id="aclassjson_1_1Parser_html_afa77bfb23973efa6798b9974a53233d5"><div class="ttname"><a href="classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5">json::Parser::~Parser</a></div><div class="ttdeci">~Parser()</div><div class="ttdoc">Class destructor.</div></div>
 <div class="ttc" id="adetail_8hpp_html"><div class="ttname"><a href="detail_8hpp.html">detail.hpp</a></div><div class="ttdoc">Private library functionality.</div></div>
 <div class="ttc" id="anamespacejson_1_1detail_html_a204d18e390a45675166e71861a67418cabbb93ef26e3c101ff11cdd21cab08a94"><div class="ttname"><a href="namespacejson_1_1detail.html#a204d18e390a45675166e71861a67418cabbb93ef26e3c101ff11cdd21cab08a94">json::detail::JsonValue::Null</a></div><div class="ttdeci">@ Null</div></div>
-<div class="ttc" id="astructjson_1_1View_html"><div class="ttname"><a href="structjson_1_1View.html">json::View</a></div><div class="ttdoc">A view into a Document.</div><div class="ttdef"><b>Definition:</b> json.hpp:47</div></div>
-<div class="ttc" id="astructjson_1_1View_html_a4409a086a755ed099da0842fa61239b5"><div class="ttname"><a href="structjson_1_1View.html#a4409a086a755ed099da0842fa61239b5">json::View::at_as</a></div><div class="ttdeci">T at_as(uint32_t index) const</div><div class="ttdoc">Wrapper around View::operator[] combined with View::as().</div><div class="ttdef"><b>Definition:</b> json.hpp:189</div></div>
+<div class="ttc" id="astructjson_1_1View_html"><div class="ttname"><a href="structjson_1_1View.html">json::View</a></div><div class="ttdoc">A view into a Document.</div><div class="ttdef"><b>Definition:</b> json.hpp:50</div></div>
+<div class="ttc" id="astructjson_1_1View_html_a4409a086a755ed099da0842fa61239b5"><div class="ttname"><a href="structjson_1_1View.html#a4409a086a755ed099da0842fa61239b5">json::View::at_as</a></div><div class="ttdeci">T at_as(uint32_t index) const</div><div class="ttdoc">Wrapper around View::operator[] combined with View::as().</div><div class="ttdef"><b>Definition:</b> json.hpp:192</div></div>
 <div class="ttc" id="astructjson_1_1View_html_a4934047d5e37c5002714e938c31716ae"><div class="ttname"><a href="structjson_1_1View.html#a4934047d5e37c5002714e938c31716ae">json::View::is_literal</a></div><div class="ttdeci">bool is_literal() const noexcept</div><div class="ttdoc">Check if View is a literal type.</div></div>
 <div class="ttc" id="astructjson_1_1View_html_a510561fe926e9e0d5aece56803eb0dce"><div class="ttname"><a href="structjson_1_1View.html#a510561fe926e9e0d5aece56803eb0dce">json::View::array_size</a></div><div class="ttdeci">uint32_t array_size() const noexcept</div><div class="ttdoc">Get the amount of elements in array type.</div></div>
-<div class="ttc" id="astructjson_1_1View_html_a5409b5576712d33f50afd9b1479d504d"><div class="ttname"><a href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">json::View::as_optional</a></div><div class="ttdeci">std::optional&lt; T &gt; as_optional() const</div><div class="ttdoc">Parse Views that may be null.</div><div class="ttdef"><b>Definition:</b> json.hpp:149</div></div>
+<div class="ttc" id="astructjson_1_1View_html_a5409b5576712d33f50afd9b1479d504d"><div class="ttname"><a href="structjson_1_1View.html#a5409b5576712d33f50afd9b1479d504d">json::View::as_optional</a></div><div class="ttdeci">std::optional&lt; T &gt; as_optional() const</div><div class="ttdoc">Parse Views that may be null.</div><div class="ttdef"><b>Definition:</b> json.hpp:152</div></div>
 <div class="ttc" id="astructjson_1_1View_html_a6aa8af2075090a314be7c27f8629b245"><div class="ttname"><a href="structjson_1_1View.html#a6aa8af2075090a314be7c27f8629b245">json::View::object_keys</a></div><div class="ttdeci">std::vector&lt; std::string &gt; object_keys() const noexcept</div><div class="ttdoc">Get the keys of object type.</div></div>
 <div class="ttc" id="astructjson_1_1View_html_a7cb3c6f8e206fde8b35fc82547b3ed85"><div class="ttname"><a href="structjson_1_1View.html#a7cb3c6f8e206fde8b35fc82547b3ed85">json::View::try_at</a></div><div class="ttdeci">const std::optional&lt; View &gt; try_at(uint32_t index) const noexcept</div><div class="ttdoc">Wrapper around View::operator[] that wont throw.</div></div>
 <div class="ttc" id="astructjson_1_1View_html_a7ddd74071180c6f7b7429d3510b2804f"><div class="ttname"><a href="structjson_1_1View.html#a7ddd74071180c6f7b7429d3510b2804f">json::View::is_array</a></div><div class="ttdeci">bool is_array() const noexcept</div><div class="ttdoc">Check if View is a array type.</div></div>
@@ -221,12 +222,12 @@ $(function() {
 <div class="ttc" id="astructjson_1_1View_html_a9a1ede5441810f07a7ca7a3cfa12c64c"><div class="ttname"><a href="structjson_1_1View.html#a9a1ede5441810f07a7ca7a3cfa12c64c">json::View::operator[]</a></div><div class="ttdeci">const View operator[](std::string_view key) const</div><div class="ttdoc">Access fields of JSON object.</div></div>
 <div class="ttc" id="astructjson_1_1View_html_ab840959823008c50e97ad419db7afbc1"><div class="ttname"><a href="structjson_1_1View.html#ab840959823008c50e97ad419db7afbc1">json::View::to_string</a></div><div class="ttdeci">std::string to_string() const noexcept</div><div class="ttdoc">String representation of the view.</div></div>
 <div class="ttc" id="astructjson_1_1View_html_ac3c08e57964dce136ee7a827a58f73b6"><div class="ttname"><a href="structjson_1_1View.html#ac3c08e57964dce136ee7a827a58f73b6">json::View::try_get</a></div><div class="ttdeci">const std::optional&lt; View &gt; try_get(std::string_view key) const noexcept</div><div class="ttdoc">Wrapper around View::operator[] that wont throw.</div></div>
-<div class="ttc" id="astructjson_1_1View_html_ac4a048759dfe648cd9c5eb667a6b6173"><div class="ttname"><a href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">json::View::as_vector</a></div><div class="ttdeci">std::vector&lt; T &gt; as_vector() const</div><div class="ttdoc">Parse an array type to a vector&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> json.hpp:164</div></div>
+<div class="ttc" id="astructjson_1_1View_html_ac4a048759dfe648cd9c5eb667a6b6173"><div class="ttname"><a href="structjson_1_1View.html#ac4a048759dfe648cd9c5eb667a6b6173">json::View::as_vector</a></div><div class="ttdeci">std::vector&lt; T &gt; as_vector() const</div><div class="ttdoc">Parse an array type to a vector&lt;T&gt;.</div><div class="ttdef"><b>Definition:</b> json.hpp:167</div></div>
 <div class="ttc" id="astructjson_1_1View_html_ade6306d774a210335c3d1bb29eab67fd"><div class="ttname"><a href="structjson_1_1View.html#ade6306d774a210335c3d1bb29eab67fd">json::View::is_object</a></div><div class="ttdeci">bool is_object() const noexcept</div><div class="ttdoc">Check if View is a object type.</div></div>
 <div class="ttc" id="astructjson_1_1View_html_ae60e0e1b42b8ebed05a83b170311537b"><div class="ttname"><a href="structjson_1_1View.html#ae60e0e1b42b8ebed05a83b170311537b">json::View::as</a></div><div class="ttdeci">T as() const</div><div class="ttdoc">Parse View to typename T.</div></div>
-<div class="ttc" id="astructjson_1_1View_html_afcf1556303f917ad380edb3a17b6ff20"><div class="ttname"><a href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">json::View::get_as</a></div><div class="ttdeci">T get_as(std::string_view key) const</div><div class="ttdoc">Wrapper around View::operator[] combined with View::as().</div><div class="ttdef"><b>Definition:</b> json.hpp:181</div></div>
-<div class="ttc" id="astructjson_1_1detail_1_1JsonNode_html"><div class="ttname"><a href="structjson_1_1detail_1_1JsonNode.html">json::detail::JsonNode</a></div><div class="ttdoc">Nodes for tree structure.</div><div class="ttdef"><b>Definition:</b> detail.hpp:32</div></div>
-<div class="ttc" id="astructjson_1_1detail_1_1JsonNode_html_a7a6a4eb568368cdfc5634bbdd39af689"><div class="ttname"><a href="structjson_1_1detail_1_1JsonNode.html#a7a6a4eb568368cdfc5634bbdd39af689">json::detail::JsonNode::value</a></div><div class="ttdeci">JsonValue value</div><div class="ttdef"><b>Definition:</b> detail.hpp:33</div></div>
+<div class="ttc" id="astructjson_1_1View_html_afcf1556303f917ad380edb3a17b6ff20"><div class="ttname"><a href="structjson_1_1View.html#afcf1556303f917ad380edb3a17b6ff20">json::View::get_as</a></div><div class="ttdeci">T get_as(std::string_view key) const</div><div class="ttdoc">Wrapper around View::operator[] combined with View::as().</div><div class="ttdef"><b>Definition:</b> json.hpp:184</div></div>
+<div class="ttc" id="astructjson_1_1detail_1_1JsonNode_html"><div class="ttname"><a href="structjson_1_1detail_1_1JsonNode.html">json::detail::JsonNode</a></div><div class="ttdoc">Nodes for tree structure.</div><div class="ttdef"><b>Definition:</b> detail.hpp:33</div></div>
+<div class="ttc" id="astructjson_1_1detail_1_1JsonNode_html_a7a6a4eb568368cdfc5634bbdd39af689"><div class="ttname"><a href="structjson_1_1detail_1_1JsonNode.html#a7a6a4eb568368cdfc5634bbdd39af689">json::detail::JsonNode::value</a></div><div class="ttdeci">JsonValue value</div><div class="ttdef"><b>Definition:</b> detail.hpp:34</div></div>
 <div class="ttc" id="astructjson_1_1detail_1_1JsonNode_html_abfc6cebc8b715c5112781cd4947a9aa1"><div class="ttname"><a href="structjson_1_1detail_1_1JsonNode.html#abfc6cebc8b715c5112781cd4947a9aa1">json::detail::JsonNode::composite</a></div><div class="ttdeci">struct json::detail::JsonNode::@0::@2 composite</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

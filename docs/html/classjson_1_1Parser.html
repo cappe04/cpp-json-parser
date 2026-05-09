@@ -89,9 +89,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afa77bfb23973efa6798b9974a53233d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5">~Parser</a> ()</td></tr>
 <tr class="memdesc:afa77bfb23973efa6798b9974a53233d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class destructor.  <a href="classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5">More...</a><br /></td></tr>
 <tr class="separator:afa77bfb23973efa6798b9974a53233d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a047f17f36b7036df289908c4d4bb7a28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1Parser.html#a047f17f36b7036df289908c4d4bb7a28">parse</a> ()</td></tr>
-<tr class="memdesc:a047f17f36b7036df289908c4d4bb7a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON.  <a href="classjson_1_1Parser.html#a047f17f36b7036df289908c4d4bb7a28">More...</a><br /></td></tr>
-<tr class="separator:a047f17f36b7036df289908c4d4bb7a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0213db778fcaa4428ea2be82f1bbd74b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1Parser.html#a0213db778fcaa4428ea2be82f1bbd74b">parse</a> () noexcept</td></tr>
+<tr class="memdesc:a0213db778fcaa4428ea2be82f1bbd74b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse JSON.  <a href="classjson_1_1Parser.html#a0213db778fcaa4428ea2be82f1bbd74b">More...</a><br /></td></tr>
+<tr class="separator:a0213db778fcaa4428ea2be82f1bbd74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4eacdfeb762a1f02a1a30c2302adcc93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93">get_status</a> () const noexcept</td></tr>
 <tr class="memdesc:a4eacdfeb762a1f02a1a30c2302adcc93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get status of parsing attempt.  <a href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93">More...</a><br /></td></tr>
 <tr class="separator:a4eacdfeb762a1f02a1a30c2302adcc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,7 +115,7 @@ Public Member Functions</h2></td></tr>
 <div class="line">} <span class="keywordflow">else</span> {</div>
 <div class="line">     std::cout &lt;&lt; parser.to_string() &lt;&lt; std::endl; <span class="comment">// prints json file.</span></div>
 <div class="line">}</div>
-<div class="ttc" id="aclassjson_1_1Parser_html"><div class="ttname"><a href="classjson_1_1Parser.html">json::Parser</a></div><div class="ttdoc">Parses JSON.</div><div class="ttdef"><b>Definition:</b> json.hpp:295</div></div>
+<div class="ttc" id="aclassjson_1_1Parser_html"><div class="ttname"><a href="classjson_1_1Parser.html">json::Parser</a></div><div class="ttdoc">Parses JSON.</div><div class="ttdef"><b>Definition:</b> json.hpp:298</div></div>
 </div><!-- fragment --><dl class="section see"><dt>See also</dt><dd><a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">Document</a> </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a76e1338fbf4946a5d67a491b38c9d29a"></a>
@@ -161,15 +161,12 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Class constructor. </p>
-<ul>
-<li><dl class="params"><dt>Parameters</dt><dd>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">source</td><td>THe JSON file as a string </td></tr>
+    <tr><td class="paramname">source</td><td>The JSON file as a string </td></tr>
   </table>
   </dd>
 </dl>
-</li>
-</ul>
 
 </div>
 </div>
@@ -211,7 +208,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Gets the parsed document. </p>
 <dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">Document</a> that is the sole owner of the parsed JSON. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>This should only be called if <a class="el" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93" title="Get status of parsing attempt.">Parser::get_status()</a> is true. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This should only be called if <a class="el" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93" title="Get status of parsing attempt.">Parser::get_status()</a> is true, otherwise it will throw <code><a class="el" href="classjson_1_1exception_1_1ParseError.html" title="Parsing errors ins&#39;t handled properly.">json::exception::ParseError</a></code>. </dd></dl>
 
 </div>
 </div>
@@ -267,15 +264,18 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get status of parsing attempt. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parsing was successfull and it's safe to call Parser::get_doucent, <code>false</code> otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parsing was successfull and it's safe to call <a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39" title="Gets the parsed document.">Parser::get_document</a>, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
-<a id="a047f17f36b7036df289908c4d4bb7a28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a047f17f36b7036df289908c4d4bb7a28">&#9670;&nbsp;</a></span>parse()</h2>
+<a id="a0213db778fcaa4428ea2be82f1bbd74b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0213db778fcaa4428ea2be82f1bbd74b">&#9670;&nbsp;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void json::Parser::parse </td>
@@ -284,6 +284,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Parse JSON. </p>
