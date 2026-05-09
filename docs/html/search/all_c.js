@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['parse_37',['parse',['../classjson_1_1Parser.html#a0213db778fcaa4428ea2be82f1bbd74b',1,'json::Parser']]],
-  ['parse_5ffile_38',['parse_file',['../json_8hpp.html#a40ecb1a406f44666279b733820e3f067',1,'json']]],
-  ['parse_5fstring_39',['parse_string',['../json_8hpp.html#a92cab4c64d03950048afe84744ea43ef',1,'json::parse_string(const std::string &amp;source)'],['../json_8hpp.html#a1a79e0f84fc51fca097df0108d7fe770',1,'json::parse_string(std::shared_ptr&lt; const std::string &gt; source)']]],
-  ['parseerror_40',['ParseError',['../classjson_1_1exception_1_1ParseError.html',1,'json::exception::ParseError'],['../classjson_1_1exception_1_1ParseError.html#a28960ff595a3d4433d4367bff370aec2',1,'json::exception::ParseError::ParseError()']]],
-  ['parser_41',['Parser',['../classjson_1_1Parser.html',1,'json::Parser'],['../classjson_1_1Document.html#ab80291af9c262f63b83fa9c16f12014d',1,'json::Document::Parser()'],['../classjson_1_1Parser.html#a76e1338fbf4946a5d67a491b38c9d29a',1,'json::Parser::Parser(std::shared_ptr&lt; const std::string &gt; source)'],['../classjson_1_1Parser.html#aa39460bfe687ee25e424f4629a39fd2a',1,'json::Parser::Parser(const std::string &amp;source)']]]
+  ['parse_38',['parse',['../classjson_1_1Parser.html#a0213db778fcaa4428ea2be82f1bbd74b',1,'json::Parser']]],
+  ['parse_5ffile_39',['parse_file',['../json_8hpp.html#a40ecb1a406f44666279b733820e3f067',1,'json']]],
+  ['parse_5fstring_40',['parse_string',['../json_8hpp.html#a92cab4c64d03950048afe84744ea43ef',1,'json::parse_string(const std::string &amp;source)'],['../json_8hpp.html#a1a79e0f84fc51fca097df0108d7fe770',1,'json::parse_string(std::shared_ptr&lt; const std::string &gt; source)']]],
+  ['parseerror_41',['ParseError',['../classjson_1_1exception_1_1ParseError.html',1,'json::exception::ParseError'],['../classjson_1_1exception_1_1ParseError.html#a28960ff595a3d4433d4367bff370aec2',1,'json::exception::ParseError::ParseError()']]],
+  ['parser_42',['Parser',['../classjson_1_1Parser.html',1,'json::Parser'],['../classjson_1_1Document.html#ab80291af9c262f63b83fa9c16f12014d',1,'json::Document::Parser()'],['../classjson_1_1Parser.html#a76e1338fbf4946a5d67a491b38c9d29a',1,'json::Parser::Parser(std::shared_ptr&lt; const std::string &gt; source)'],['../classjson_1_1Parser.html#aa39460bfe687ee25e424f4629a39fd2a',1,'json::Parser::Parser(const std::string &amp;source)']]]
 ];

@@ -99,13 +99,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afd6c964e8399c97558493cb69e4554d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the internal error buffer as a string.  <a href="classjson_1_1Parser.html#afd6c964e8399c97558493cb69e4554d0">More...</a><br /></td></tr>
 <tr class="separator:afd6c964e8399c97558493cb69e4554d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9809420557e42a912a011c9ec37af39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classjson_1_1Document.html">Document</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39">get_document</a> ()</td></tr>
-<tr class="memdesc:ae9809420557e42a912a011c9ec37af39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parsed document.  <a href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39">More...</a><br /></td></tr>
+<tr class="memdesc:ae9809420557e42a912a011c9ec37af39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the parsed document.  <a href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39">More...</a><br /></td></tr>
 <tr class="separator:ae9809420557e42a912a011c9ec37af39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a164b72bcfdddfddfe02c5e1b277f6e21"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classjson_1_1Document.html">Document</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjson_1_1Parser.html#a164b72bcfdddfddfe02c5e1b277f6e21">get_document_ptr</a> ()</td></tr>
+<tr class="memdesc:a164b72bcfdddfddfe02c5e1b277f6e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extract the parsed document as an <code>std::unique_ptr</code>  <a href="classjson_1_1Parser.html#a164b72bcfdddfddfe02c5e1b277f6e21">More...</a><br /></td></tr>
+<tr class="separator:a164b72bcfdddfddfe02c5e1b277f6e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parses JSON. </p>
 <p>A class to parse JSON. In case of invalid JSON code an error message will be provided with Parser::get_erros(). The validity of the JSON can be check with <a class="el" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93" title="Get status of parsing attempt.">Parser::get_status()</a>;</p>
-<p>The JSON will be parsed and saved into a <a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">Document</a> instance which can be exracted with <a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39" title="Gets the parsed document.">Parser::get_document()</a>. If this method isn't called the <a class="el" href="classjson_1_1Parser.html" title="Parses JSON.">Parser</a> instance will own the document and free it when destroyed.</p>
+<p>The JSON will be parsed and saved into a <a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">Document</a> instance which can be exracted with <a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39" title="Extract the parsed document.">Parser::get_document()</a>. If this method isn't called the <a class="el" href="classjson_1_1Parser.html" title="Parses JSON.">Parser</a> instance will own the document and free it when destroyed.</p>
 <p>Example: </p><div class="fragment"><div class="line"><span class="comment">// source = some std::shared_ptr to a const string</span></div>
 <div class="line"><a class="code" href="classjson_1_1Parser.html">json::Parser</a> parser(source);</div>
 <div class="line">parser.parse();</div>
@@ -186,7 +189,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Class destructor. </p>
-<p>Will free parsed JSON document if <a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39" title="Gets the parsed document.">Parser::get_document()</a> havn't been called. </p>
+<p>Will free parsed JSON document if <a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39" title="Extract the parsed document.">Parser::get_document()</a> havn't been called. </p>
 
 </div>
 </div>
@@ -206,8 +209,29 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Gets the parsed document. </p>
+<p>Extract the parsed document. </p>
 <dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">Document</a> that is the sole owner of the parsed JSON. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>This should only be called if <a class="el" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93" title="Get status of parsing attempt.">Parser::get_status()</a> is true, otherwise it will throw <code><a class="el" href="classjson_1_1exception_1_1ParseError.html" title="Parsing errors ins&#39;t handled properly.">json::exception::ParseError</a></code>. </dd></dl>
+
+</div>
+</div>
+<a id="a164b72bcfdddfddfe02c5e1b277f6e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a164b72bcfdddfddfe02c5e1b277f6e21">&#9670;&nbsp;</a></span>get_document_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classjson_1_1Document.html">Document</a>&gt; json::Parser::get_document_ptr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Extract the parsed document as an <code>std::unique_ptr</code> </p>
+<dl class="section return"><dt>Returns</dt><dd>an <code>std::unique_ptr</code> to a <a class="el" href="classjson_1_1Document.html" title="Parsed JSON document.">Document</a> that is the sole owner of the parsed JSON. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>This should only be called if <a class="el" href="classjson_1_1Parser.html#a4eacdfeb762a1f02a1a30c2302adcc93" title="Get status of parsing attempt.">Parser::get_status()</a> is true, otherwise it will throw <code><a class="el" href="classjson_1_1exception_1_1ParseError.html" title="Parsing errors ins&#39;t handled properly.">json::exception::ParseError</a></code>. </dd></dl>
 
 </div>
@@ -264,7 +288,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get status of parsing attempt. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parsing was successfull and it's safe to call <a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39" title="Gets the parsed document.">Parser::get_document</a>, <code>false</code> otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if parsing was successfull and it's safe to call <a class="el" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39" title="Extract the parsed document.">Parser::get_document</a>, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>

@@ -184,21 +184,22 @@ $(function() {
 <div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#afd6c964e8399c97558493cb69e4554d0">  337</a></span>&#160;        std::<span class="keywordtype">string</span> get_error() const noexcept;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
 <div class="line"><a name="l00345"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#ae9809420557e42a912a011c9ec37af39">  345</a></span>&#160;        <a class="code" href="classjson_1_1Document.html">Document</a> get_document();</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    private:</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        struct Impl; <span class="comment">// pImpl design pattern</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        std::unique_ptr&lt;Impl&gt; impl;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        </div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    };</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    </div>
-<div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="json_8hpp.html#a92cab4c64d03950048afe84744ea43ef">  364</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(const std::<span class="keywordtype">string</span>&amp; source);</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno"><a class="line" href="json_8hpp.html#a1a79e0f84fc51fca097df0108d7fe770">  369</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    </div>
-<div class="line"><a name="l00383"></a><span class="lineno"><a class="line" href="json_8hpp.html#a40ecb1a406f44666279b733820e3f067">  383</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_file(std::string_view path);</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160; </div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;};</div>
+<div class="line"><a name="l00352"></a><span class="lineno"><a class="line" href="classjson_1_1Parser.html#a164b72bcfdddfddfe02c5e1b277f6e21">  352</a></span>&#160;        std::unique_ptr&lt;<a class="code" href="classjson_1_1Document.html">Document</a>&gt; get_document_ptr();</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    private:</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        struct Impl; <span class="comment">// pImpl design pattern</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        std::unique_ptr&lt;Impl&gt; impl;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;        </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    };</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    </div>
+<div class="line"><a name="l00371"></a><span class="lineno"><a class="line" href="json_8hpp.html#a92cab4c64d03950048afe84744ea43ef">  371</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(const std::<span class="keywordtype">string</span>&amp; source);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno"><a class="line" href="json_8hpp.html#a1a79e0f84fc51fca097df0108d7fe770">  376</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_string(std::shared_ptr&lt;const std::<span class="keywordtype">string</span>&gt; source);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    </div>
+<div class="line"><a name="l00390"></a><span class="lineno"><a class="line" href="json_8hpp.html#a40ecb1a406f44666279b733820e3f067">  390</a></span>&#160;    <a class="code" href="classjson_1_1Document.html">Document</a> parse_file(std::string_view path);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;};</div>
 <div class="ttc" id="aclassjson_1_1Document_html"><div class="ttname"><a href="classjson_1_1Document.html">json::Document</a></div><div class="ttdoc">Parsed JSON document.</div><div class="ttdef"><b>Definition:</b> json.hpp:220</div></div>
 <div class="ttc" id="aclassjson_1_1Document_html_a21d36ca25806e5a0ddc6e453a03849bd"><div class="ttname"><a href="classjson_1_1Document.html#a21d36ca25806e5a0ddc6e453a03849bd">json::Document::top_view</a></div><div class="ttdeci">View top_view() const noexcept</div><div class="ttdoc">Gets the top level View.</div></div>
 <div class="ttc" id="aclassjson_1_1Document_html_abdd5fe2a3047f43d69d24abef49c816f"><div class="ttname"><a href="classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f">json::Document::~Document</a></div><div class="ttdeci">~Document()</div><div class="ttdoc">Class destructor.</div></div>

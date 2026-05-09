@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['_7edocument_104',['~Document',['../classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f',1,'json::Document']]],
-  ['_7eparser_105',['~Parser',['../classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5',1,'json::Parser']]]
+  ['_7edocument_106',['~Document',['../classjson_1_1Document.html#abdd5fe2a3047f43d69d24abef49c816f',1,'json::Document']]],
+  ['_7eparser_107',['~Parser',['../classjson_1_1Parser.html#afa77bfb23973efa6798b9974a53233d5',1,'json::Parser']]]
 ];
