@@ -92,6 +92,18 @@ int main() {
     };
 
     std::cout << "\n" << std::endl;
+    
+    std::cout << "String representation:" << std::endl;
+    std::cout << character.to_string() << std::endl;
+    
+    std::cout << "\n" << std::endl;
+
+    std::cout << "All Keys: " << std::endl;
+    for (auto key: character.object_keys()) {
+        std::cout << key << std::endl;
+    }
+
+    std::cout << "\n" << std::endl;
 
     std::cout << "=== Error demo ===" << std::endl;
     auto character2_doc = load_character(source2);
