@@ -95,31 +95,29 @@ std::vector<std::string> json::View::object_keys() const noexcept {
 // View::as template
 
 // Numbers
+
 template<typename T>
-static std::optional<T> as_number(std::string_view sv) {
+static T as_number(const JsonNode* const node) {
+    if(node->value != JsonValue::Number) 
+        JSON_PARSER_THROW(TypeError, "Could not convert View to number.");
+    
+    std::string_view sv = node->literal.sv;
     T value;
     auto res = std::from_chars(sv.data(), sv.data() + sv.size(), value);
     if(res.ec == std::errc()) {
         return value;
     }
-    return std::nullopt;
-}
 
-#define VIEW_AS_NUMBER(t) \
-    if(node->value != JsonValue::Number) { \
-        JSON_PARSER_THROW(TypeError, "Could not convert View to " #t); \
-    }; \
-    std::optional<t> value = as_number<t>(node->literal.sv); \
-    if(value) { \
-        return value.value(); \
-    } \
-    JSON_PARSER_THROW(TypeError, "Could not convert View to " #t)
+    JSON_PARSER_THROW(TypeError, "Could not convert View to number.");
+};
 
+template<> int              View::as<int>()             const { return as_number<int>(node); };
+template<> float            View::as<float>()           const { return as_number<float>(node); };
+template<> unsigned int     View::as<unsigned int>()    const { return as_number<unsigned int>(node); };
+template<> double           View::as<double>()          const { return as_number<double>(node); };
 
-template<> int              View::as<int>()             const { VIEW_AS_NUMBER(int); };
-template<> float            View::as<float>()           const { VIEW_AS_NUMBER(float); };
-template<> unsigned int     View::as<unsigned int>()    const { VIEW_AS_NUMBER(unsigned int); };
-template<> double           View::as<double>()          const { VIEW_AS_NUMBER(double); };
+// Should be very easy to add all the uintXX_t and intxx_t, std::from_chars 
+// should have support for them.
 
 // Not numbers
 template<>
