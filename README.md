@@ -27,8 +27,6 @@ This will produce a static library file:
 - `libjson_parser.a` (Linux/macOS)
 - `json_parser.lib` (Windows)
 
-Which results in a file `libjson_parser.a` or `json_parser.lib`.
-
 
 ## Usage
 The libraries main functianality is split into 3 diffrent classes / structs, all under the namespace `json` and all in the header `json_parser/json.hpp`.
